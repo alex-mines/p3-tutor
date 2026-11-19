@@ -1,0 +1,99 @@
+{
+  "duration_api_ms": 38068,
+  "stop_reason": "end_turn",
+  "session_id": "dc005390-cf2e-41ac-a7fa-f3d8e3153441",
+  "total_cost_usd": 0.1739716,
+  "usage": {
+    "input_tokens": 8,
+    "cache_creation_input_tokens": 27942,
+    "cache_read_input_tokens": 116076,
+    "output_tokens": 5058,
+    "output_tokens_details": {
+      "thinking_tokens": 1706
+    },
+    "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+    },
+    "service_tier": "standard",
+    "cache_creation": {
+      "ephemeral_1h_input_tokens": 27942,
+      "ephemeral_5m_input_tokens": 0
+    },
+    "inference_geo": "global",
+    "iterations": [
+      {
+        "input_tokens": 2,
+        "output_tokens": 319,
+        "cache_read_input_tokens": 38012,
+        "cache_creation_input_tokens": 4294,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 4294
+        },
+        "type": "message"
+      }
+    ],
+    "speed": "standard",
+    "fallback_credit": null
+  },
+  "modelUsage": {
+    "claude-sonnet-5-5": {
+      "inputTokens": 8,
+      "outputTokens": 5058,
+      "cacheReadInputTokens": 116076,
+      "cacheCreationInputTokens": 27942,
+      "webSearchRequests": 0,
+      "costUSD": 0.1739716,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 1706,
+      "canonicalModel": "claude-sonnet-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+    "spawned": 0,
+    "requested": {
+      "background": 0,
+      "foreground": 0,
+      "unset": 0
+    },
+    "started_in_background": 0,
+    "max_depth": 0,
+    "spawned_by_subagents": 0,
+    "completed": 0,
+    "failed": 0,
+    "killed": {
+      "parent": 0,
+      "user": 0,
+      "system": 0
+    },
+    "refused": {
+      "depth_limit": 0,
+      "concurrency_limit": 0,
+      "budget": 0
+    },
+    "by_type": {}
+  },
+  "safety_stops": 0,
+  "is_error": false,
+  "num_turns": 10,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "The six-question quiz on O4 is ready, with its key. It's `quizzes/0002.json` (\"Workflows, agents and who owns the control flow\") and `keys/0002.json`.\n\n- **Content:** four multiple-choice and two short-answer items. They use makerspace cases like booking, manual questions and the laser-cutter request, and the last two items ask for a decision and a cost argument.\n- **Ahead of the lessons:** there is no lesson on O4 yet. I wrote the items from the standard distinction (code owns the path in a workflow, the model owns it in an agent) without searching for or citing a source. I can add a lesson on it next.\n- **New misconception ids:** I added `M7` (agents are better, so use them everywhere) and `M8` (a system that calls a model at a step counts as an agent). These ids are used in the key's distractors.\n- **Self-check:** I answered each item from its stem alone and found one defensible answer each. I did not run any script on the files.",
+  "ttft_ms": 1038,
+  "type": "result",
+  "duration_ms": 38385,
+  "uuid": "6bf2225a-3b00-470f-8993-03c4afcbcd10",
+  "ttft_stream_ms": 663,
+  "time_to_request_ms": 100,
+  "first_content_frame_ms": 663,
+  "queued_turn_count": 0,
+  "result_index": 0
+}

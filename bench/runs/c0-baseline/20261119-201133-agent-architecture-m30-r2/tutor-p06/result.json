@@ -1,0 +1,99 @@
+{
+  "duration_api_ms": 21508,
+  "stop_reason": "end_turn",
+  "session_id": "211ee0a3-27e6-4c03-ba22-f69dcfac15f0",
+  "total_cost_usd": 0.1385304,
+  "usage": {
+    "input_tokens": 8,
+    "cache_creation_input_tokens": 25255,
+    "cache_read_input_tokens": 116144,
+    "output_tokens": 2588,
+    "output_tokens_details": {
+      "thinking_tokens": 1158
+    },
+    "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+    },
+    "service_tier": "standard",
+    "cache_creation": {
+      "ephemeral_1h_input_tokens": 25255,
+      "ephemeral_5m_input_tokens": 0
+    },
+    "inference_geo": "global",
+    "iterations": [
+      {
+        "input_tokens": 2,
+        "output_tokens": 513,
+        "cache_read_input_tokens": 38410,
+        "cache_creation_input_tokens": 1209,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 1209
+        },
+        "type": "message"
+      }
+    ],
+    "speed": "standard",
+    "fallback_credit": null
+  },
+  "modelUsage": {
+    "claude-sonnet-5-5": {
+      "inputTokens": 8,
+      "outputTokens": 2588,
+      "cacheReadInputTokens": 116144,
+      "cacheCreationInputTokens": 25255,
+      "webSearchRequests": 0,
+      "costUSD": 0.1385304,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 1158,
+      "canonicalModel": "claude-sonnet-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+    "spawned": 0,
+    "requested": {
+      "background": 0,
+      "foreground": 0,
+      "unset": 0
+    },
+    "started_in_background": 0,
+    "max_depth": 0,
+    "spawned_by_subagents": 0,
+    "completed": 0,
+    "failed": 0,
+    "killed": {
+      "parent": 0,
+      "user": 0,
+      "system": 0
+    },
+    "refused": {
+      "depth_limit": 0,
+      "concurrency_limit": 0,
+      "budget": 0
+    },
+    "by_type": {}
+  },
+  "safety_stops": 0,
+  "is_error": false,
+  "num_turns": 10,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "Think of ordering at a restaurant.\n\n- **The customer is the model.** The customer can only talk. They can't walk into the kitchen.\n- **The menu is the list of tools.** Each dish has a name and a short description, like \"Margherita: tomato, mozzarella, basil.\" The customer never sees how a dish is cooked. They pick from the menu because the descriptions tell them what each dish is.\n- **The waiter is your program.** The customer says, \"One margherita, no olives.\" That order is all the customer produces. The waiter takes it to the kitchen.\n- **The kitchen is the tool's code.** It does the real work and hands a plate back to the waiter.\n\nThe waiter puts the plate on the table. The customer looks at it and either orders something else (\"now a lemonade\") or says \"that's all.\" That repeating cycle is the agent loop you already know. Tool calling is the order-and-delivery step inside it.\n\nWhere the analogy breaks: a real customer remembers the meal so far. A model doesn't. Each time it speaks, the waiter hands it the whole table history again: the question, every order and every plate. That is also why long meals cost more.\n\nNow map it to your assistant: \"Is the laser cutter free Friday?\" The tool descriptions are the menu, so a clear description is what lets the model choose well.\n\nQuick check, in your own words: in this picture, who actually cooks, and who only orders?\n\nQuiz 0001 is still ungraded and covers this topic. I kept this general and didn't go through its items. If you want, I can grade both of your attempts next, and then we can compare them against this picture.",
+  "ttft_ms": 663,
+  "type": "result",
+  "duration_ms": 21782,
+  "uuid": "26353668-66d0-4945-a23e-eee67b9f16a2",
+  "ttft_stream_ms": 534,
+  "time_to_request_ms": 73,
+  "first_content_frame_ms": 535,
+  "queued_turn_count": 0,
+  "result_index": 0
+}

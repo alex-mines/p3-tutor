@@ -1,0 +1,50 @@
+{
+  "id": "0002",
+  "objective": "O3",
+  "title": "Context and memory in an agent",
+  "items": [
+    {
+      "id": "q1",
+      "type": "mcq",
+      "objective": "O3",
+      "stem": "On Monday a student books the 3D printer through your assistant and mentions they are allergic to a certain resin. On Wednesday they start a new chat session. Your team wrote no code to save anything. What will the assistant know about the allergy?",
+      "options": [
+        {"id": "a", "text": "Nothing, because a new session starts with an empty context"},
+        {"id": "b", "text": "Everything, because the model keeps what it learned from users"},
+        {"id": "c", "text": "Only the booking, because tools save bookings in the model"},
+        {"id": "d", "text": "Everything, because the context window stores a whole week"}
+      ]
+    },
+    {
+      "id": "q2",
+      "type": "numeric",
+      "objective": "O3",
+      "stem": "In one request, the fixed part of the context (system prompt and tool descriptions) is 800 tokens and the question is 100 tokens. The agent makes two tool calls, and each tool result adds 400 tokens to the history. The model is called three times: once for the question, then once after each result. Ignoring the model's own replies, how many tokens does the model read in total across the three calls?",
+      "unit": "tokens"
+    },
+    {
+      "id": "q3",
+      "type": "mcq",
+      "objective": "O3",
+      "stem": "Your assistant must answer from a 200-page set of machine manuals. Which design keeps the cost per request lowest while still answering from the manuals?",
+      "options": [
+        {"id": "a", "text": "Put all 200 pages in the system prompt so every call has them"},
+        {"id": "b", "text": "Search an index of chunks and put only the best few in context"},
+        {"id": "c", "text": "Summarize all 200 pages into one page and keep only that page"},
+        {"id": "d", "text": "Ask students to paste the relevant page into each question"}
+      ]
+    },
+    {
+      "id": "q4",
+      "type": "short",
+      "objective": "O3",
+      "stem": "A teammate says, \"We can store each student's training status as a note the model writes for itself.\" In one or two sentences, give one reason a record your program controls is safer for this fact."
+    },
+    {
+      "id": "q5",
+      "type": "short",
+      "objective": "O3",
+      "stem": "In one or two sentences, explain why a chunk of a manual that reads only \"Set the speed to 40\" may be retrieved for the wrong question, and what you can add to fix it."
+    }
+  ]
+}

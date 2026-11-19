@@ -1,0 +1,99 @@
+{
+  "duration_api_ms": 12792,
+  "stop_reason": "end_turn",
+  "session_id": "909993d2-253d-463e-a8d1-191501e49499",
+  "total_cost_usd": 0.1156405,
+  "usage": {
+    "input_tokens": 6,
+    "cache_creation_input_tokens": 22913,
+    "cache_read_input_tokens": 77865,
+    "output_tokens": 1619,
+    "output_tokens_details": {
+      "thinking_tokens": 200
+    },
+    "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+    },
+    "service_tier": "standard",
+    "cache_creation": {
+      "ephemeral_1h_input_tokens": 22913,
+      "ephemeral_5m_input_tokens": 0
+    },
+    "inference_geo": "global",
+    "iterations": [
+      {
+        "input_tokens": 2,
+        "output_tokens": 420,
+        "cache_read_input_tokens": 36435,
+        "cache_creation_input_tokens": 842,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 842
+        },
+        "type": "message"
+      }
+    ],
+    "speed": "standard",
+    "fallback_credit": null
+  },
+  "modelUsage": {
+    "claude-sonnet-5-5": {
+      "inputTokens": 6,
+      "outputTokens": 1619,
+      "cacheReadInputTokens": 77865,
+      "cacheCreationInputTokens": 22913,
+      "webSearchRequests": 0,
+      "costUSD": 0.1156405,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 200,
+      "canonicalModel": "claude-sonnet-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+    "spawned": 0,
+    "requested": {
+      "background": 0,
+      "foreground": 0,
+      "unset": 0
+    },
+    "started_in_background": 0,
+    "max_depth": 0,
+    "spawned_by_subagents": 0,
+    "completed": 0,
+    "failed": 0,
+    "killed": {
+      "parent": 0,
+      "user": 0,
+      "system": 0
+    },
+    "refused": {
+      "depth_limit": 0,
+      "concurrency_limit": 0,
+      "budget": 0
+    },
+    "by_type": {}
+  },
+  "safety_stops": 0,
+  "is_error": false,
+  "num_turns": 9,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "No, that isn't right. A language model doesn't remember earlier conversations on its own, so your assistant won't remember last week's chats by default.\n\nA model only sees the text sent to it in the current request. Between requests it keeps nothing. Chatbots seem to remember because the app around the model resends the earlier messages each time.\n\nHere is how that plays out for a student:\n\n- Last Tuesday, Sam tells the assistant, \"I finished the laser cutter safety training.\"\n- This Tuesday, Sam asks to book the laser cutter. The model has never seen Sam's earlier message unless your code supplies it.\n- To make it work, your code has to save the fact (say, `{\"sam\": [\"laser cutter training: done\"]}`) in a file or database. At the start of the next session, it has to put that fact into the context the model reads.\n\nMemory is therefore something you design, not something the model has. You choose what to save, where to store it, and what to load back in. Everything you load takes up context, and you pay for it on every request, which matters with your small budget. This is the \"what to keep in context and what to save between sessions\" decision from your mission.\n\nA quick check: if the assistant should know each student's training status, would you save the whole conversation, or something smaller? Why?\n\nI can turn this into a lesson on context and memory, which is the next step in your mission.",
+  "ttft_ms": 996,
+  "type": "result",
+  "duration_ms": 13031,
+  "uuid": "0cbf61ca-e268-4d07-ae6a-1b143e846e38",
+  "ttft_stream_ms": 582,
+  "time_to_request_ms": 94,
+  "first_content_frame_ms": 582,
+  "queued_turn_count": 0,
+  "result_index": 0
+}

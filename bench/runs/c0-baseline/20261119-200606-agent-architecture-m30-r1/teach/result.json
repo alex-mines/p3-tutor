@@ -1,0 +1,113 @@
+{
+  "duration_api_ms": 139773,
+  "stop_reason": "end_turn",
+  "session_id": "b05640fe-0b78-42d9-bfa4-858120cc82e8",
+  "total_cost_usd": 0.5140324000000001,
+  "usage": {
+    "input_tokens": 18,
+    "cache_creation_input_tokens": 60470,
+    "cache_read_input_tokens": 383607,
+    "output_tokens": 19837,
+    "output_tokens_details": {
+      "thinking_tokens": 926
+    },
+    "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+    },
+    "service_tier": "standard",
+    "cache_creation": {
+      "ephemeral_1h_input_tokens": 60470,
+      "ephemeral_5m_input_tokens": 0
+    },
+    "inference_geo": "global",
+    "iterations": [
+      {
+        "input_tokens": 2,
+        "output_tokens": 656,
+        "cache_read_input_tokens": 73296,
+        "cache_creation_input_tokens": 1538,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 1538
+        },
+        "type": "message"
+      }
+    ],
+    "speed": "standard",
+    "fallback_credit": null
+  },
+  "modelUsage": {
+    "claude-sonnet-5-5": {
+      "inputTokens": 18,
+      "outputTokens": 19837,
+      "cacheReadInputTokens": 383607,
+      "cacheCreationInputTokens": 60470,
+      "webSearchRequests": 0,
+      "costUSD": 0.4786467000000001,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 926,
+      "canonicalModel": "claude-sonnet-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    },
+    "claude-haiku-5-5": {
+      "inputTokens": 41932,
+      "outputTokens": 2385,
+      "cacheReadInputTokens": 0,
+      "cacheCreationInputTokens": 0,
+      "webSearchRequests": 3,
+      "costUSD": 0.0353857,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 264,
+      "canonicalModel": "claude-haiku-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+    "spawned": 0,
+    "requested": {
+      "background": 0,
+      "foreground": 0,
+      "unset": 0
+    },
+    "started_in_background": 0,
+    "max_depth": 0,
+    "spawned_by_subagents": 0,
+    "completed": 0,
+    "failed": 0,
+    "killed": {
+      "parent": 0,
+      "user": 0,
+      "system": 0
+    },
+    "refused": {
+      "depth_limit": 0,
+      "concurrency_limit": 0,
+      "budget": 0
+    },
+    "by_type": {}
+  },
+  "safety_stops": 0,
+  "is_error": false,
+  "num_turns": 23,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "The 30-minute lesson on O3 is at `lessons/0001-context-and-memory.html`, and a five-item quiz is ready.\n\n**What the lesson covers**\n- **The context window:** what the model sees on each call, tokens, and why a long context raises cost and can lower recall.\n- **Between steps:** the history is re-sent on every call, shown with a worked token count, plus trimming tool results and compaction.\n- **Between sessions:** nothing survives unless your program saves it. Exact facts like training status go in records; soft facts go in notes.\n- **Retrieval:** chunk the manuals, index them, return only the best few chunks, and label each chunk with its machine and section.\n- **Practice:** a final worked example on placing facts in the assistant, then an exercise for you to do.\n- **Wrap-up:** the lesson ends with a short summary and a \"say it in your own words\" prompt.\n\n**Sources and checks**\n- I wrote the lesson from search results for four Anthropic pages, not from the full pages. Those are the context-engineering essay, the memory tool docs, the context-management post and the contextual retrieval post.\n- The 39%, 35% and 49% figures come from those results and are marked in the lesson as Anthropic's own tests. I did not run the HTML or check the links in a browser, and I did not count the words.\n\n**Quiz and notes**\n- **Quiz 0002:** it has five items on O3, and the key is in `keys/0002.json`. Ask me for it whenever you want to take it.\n- **Files updated:** I added `RESOURCES.md` and a note in `NOTES.md`.\n- **Still ungraded:** quiz 0001's two submissions are untouched.\n\nAsk me anything about the lesson in the chat. If you'd like a shorter or longer lesson, or a cheat sheet of the three-question placement rule, say so.\n\n**One question for you:** do you already have a rough idea of how big the manuals are? It would let me make the cost examples in the next lesson match your real budget.",
+  "ttft_ms": 1472,
+  "type": "result",
+  "duration_ms": 131617,
+  "uuid": "8d327d5e-aca5-4e98-9c4c-d8c9f619affc",
+  "ttft_stream_ms": 1071,
+  "time_to_request_ms": 113,
+  "first_content_frame_ms": 1071,
+  "queued_turn_count": 0,
+  "result_index": 0
+}

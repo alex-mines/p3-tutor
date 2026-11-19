@@ -1,0 +1,50 @@
+{
+  "id": "0002",
+  "objective": "O3",
+  "title": "Context and memory in an agent",
+  "items": [
+    {
+      "id": "q1",
+      "type": "mcq",
+      "objective": "O3",
+      "stem": "On Monday a student finishes a chat with your assistant and says she will book the CNC router on Thursday. On Thursday she opens a brand-new chat. Nothing was saved anywhere. What does the model know about Monday?",
+      "options": [
+        {"id": "a", "text": "Everything, because the model stores each chat it has had"},
+        {"id": "b", "text": "Only a summary, which the model writes by itself at the end"},
+        {"id": "c", "text": "Nothing, because each new call starts with only its own input"},
+        {"id": "d", "text": "Everything, as long as the chat fits inside the context window"}
+      ]
+    },
+    {
+      "id": "q2",
+      "type": "numeric",
+      "objective": "O3",
+      "stem": "A run has three model calls. The first call's input is 2,000 tokens. Each tool result adds 1,000 tokens to the history, and the program re-sends the whole history on every call (ignore the model's own output). Calls 2 and 3 each follow one tool result. How many input tokens are paid for across the three calls in total?",
+      "unit": "tokens"
+    },
+    {
+      "id": "q3",
+      "type": "mcq",
+      "objective": "O3",
+      "stem": "Your assistant must answer from a 400-page set of machine manuals. Which approach best fits a small model budget?",
+      "options": [
+        {"id": "a", "text": "Paste all manuals into the system prompt, so every answer has the facts"},
+        {"id": "b", "text": "Search the manuals per question and add only the best few passages"},
+        {"id": "c", "text": "Ask the model to recall the manuals from its training, to avoid tokens"},
+        {"id": "d", "text": "Save the manuals as notes, so the model remembers them between sessions"}
+      ]
+    },
+    {
+      "id": "q4",
+      "type": "short",
+      "objective": "O3",
+      "stem": "In one or two sentences: your team wants the assistant to remember each student's training status between visits. What must the program do, and when, for this to work?"
+    },
+    {
+      "id": "q5",
+      "type": "short",
+      "objective": "O3",
+      "stem": "A teammate proposes switching to a model with a much larger context window so the assistant will not need any notes. In one or two sentences, why does this not solve the problem of remembering students between visits?"
+    }
+  ]
+}

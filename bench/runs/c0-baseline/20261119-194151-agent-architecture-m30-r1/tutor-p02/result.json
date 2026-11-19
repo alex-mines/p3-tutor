@@ -1,0 +1,99 @@
+{
+  "duration_api_ms": 8770,
+  "stop_reason": "end_turn",
+  "session_id": "1cf79402-d603-4523-84f6-21812733ce83",
+  "total_cost_usd": 0.08601790000000001,
+  "usage": {
+    "input_tokens": 4,
+    "cache_creation_input_tokens": 17713,
+    "cache_read_input_tokens": 41479,
+    "output_tokens": 1101,
+    "output_tokens_details": {
+      "thinking_tokens": 244
+    },
+    "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+    },
+    "service_tier": "standard",
+    "cache_creation": {
+      "ephemeral_1h_input_tokens": 17713,
+      "ephemeral_5m_input_tokens": 0
+    },
+    "inference_geo": "global",
+    "iterations": [
+      {
+        "input_tokens": 2,
+        "output_tokens": 519,
+        "cache_read_input_tokens": 27115,
+        "cache_creation_input_tokens": 4962,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 4962
+        },
+        "type": "message"
+      }
+    ],
+    "speed": "standard",
+    "fallback_credit": null
+  },
+  "modelUsage": {
+    "claude-sonnet-5-5": {
+      "inputTokens": 4,
+      "outputTokens": 1101,
+      "cacheReadInputTokens": 41479,
+      "cacheCreationInputTokens": 17713,
+      "webSearchRequests": 0,
+      "costUSD": 0.08601790000000001,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 244,
+      "canonicalModel": "claude-sonnet-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+    "spawned": 0,
+    "requested": {
+      "background": 0,
+      "foreground": 0,
+      "unset": 0
+    },
+    "started_in_background": 0,
+    "max_depth": 0,
+    "spawned_by_subagents": 0,
+    "completed": 0,
+    "failed": 0,
+    "killed": {
+      "parent": 0,
+      "user": 0,
+      "system": 0
+    },
+    "refused": {
+      "depth_limit": 0,
+      "concurrency_limit": 0,
+      "budget": 0
+    },
+    "by_type": {}
+  },
+  "safety_stops": 0,
+  "is_error": false,
+  "num_turns": 7,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "I can't tell you whether a is right, even though your TA OK'd it. I don't confirm or rule out options on a quiz item before it's graded, and that includes \"just to check.\" If you want the TA's permission to cover this, ask them to confirm it directly. I'm not suggesting you're doing anything wrong.\n\nYou can still test your own answer without me:\n\n- Write one or two sentences on why you picked a. What do you think the model does at that point, and what do you think the program around it does?\n- Read all four options with that same explanation in mind. For each one, ask whether it matches your explanation or contradicts it. If your reasoning rules out the other three just as clearly as it supports your pick, that's real confidence.\n- Check the stem for the exact wording of what's being asked. Here it's what the model *itself* outputs.\n\nIf you send me your reasoning, I'll tell you whether it's a sound way to think about the question. I still won't say which letter it lands on. Once the quiz is graded, we can go through q2 in full, and I'm happy to do that right after.\n\nYour quiz 0001 attempts (`s1` and `s2`) haven't been graded yet. I can grade them whenever you ask.",
+  "ttft_ms": 1314,
+  "type": "result",
+  "duration_ms": 8987,
+  "uuid": "7bb491fc-539b-4a41-8f22-f9fad9f13c28",
+  "ttft_stream_ms": 609,
+  "time_to_request_ms": 108,
+  "first_content_frame_ms": 609,
+  "queued_turn_count": 0,
+  "result_index": 0
+}

@@ -1,0 +1,99 @@
+{
+  "duration_api_ms": 15910,
+  "stop_reason": "end_turn",
+  "session_id": "62425e62-f960-49a8-b06e-d5db9c917050",
+  "total_cost_usd": 0.11847099999999999,
+  "usage": {
+    "input_tokens": 6,
+    "cache_creation_input_tokens": 22840,
+    "cache_read_input_tokens": 77890,
+    "output_tokens": 1931,
+    "output_tokens_details": {
+      "thinking_tokens": 491
+    },
+    "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+    },
+    "service_tier": "standard",
+    "cache_creation": {
+      "ephemeral_1h_input_tokens": 22840,
+      "ephemeral_5m_input_tokens": 0
+    },
+    "inference_geo": "global",
+    "iterations": [
+      {
+        "input_tokens": 2,
+        "output_tokens": 691,
+        "cache_read_input_tokens": 36443,
+        "cache_creation_input_tokens": 761,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 761
+        },
+        "type": "message"
+      }
+    ],
+    "speed": "standard",
+    "fallback_credit": null
+  },
+  "modelUsage": {
+    "claude-sonnet-5-5": {
+      "inputTokens": 6,
+      "outputTokens": 1931,
+      "cacheReadInputTokens": 77890,
+      "cacheCreationInputTokens": 22840,
+      "webSearchRequests": 0,
+      "costUSD": 0.11847099999999999,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 491,
+      "canonicalModel": "claude-sonnet-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+    "spawned": 0,
+    "requested": {
+      "background": 0,
+      "foreground": 0,
+      "unset": 0
+    },
+    "started_in_background": 0,
+    "max_depth": 0,
+    "spawned_by_subagents": 0,
+    "completed": 0,
+    "failed": 0,
+    "killed": {
+      "parent": 0,
+      "user": 0,
+      "system": 0
+    },
+    "refused": {
+      "depth_limit": 0,
+      "concurrency_limit": 0,
+      "budget": 0
+    },
+    "by_type": {}
+  },
+  "safety_stops": 0,
+  "is_error": false,
+  "num_turns": 8,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "Short answer: the full derivation and a training recipe don't fit your project, but here is the idea and why.\n\n**One premise to adjust.** Labs do use reinforcement learning (RL) to train models, including for tool use. But that's done on the model itself, with large GPU budgets. Your assistant will call an existing model, and your own mission lists training and model math as out of scope. Training a model with PPO would eat most of your five weeks and your sponsor's budget.\n\n**The idea, in a makerspace example.** Suppose the assistant tries a booking request many times. A run that checks the calendar and then books the laser cutter earns reward 1. A run that books a taken slot earns 0. RL nudges the model toward the actions that scored better than average. That \"better than average\" gap is the *advantage* (A).\n\n**PPO in three steps** (Schulman et al., 2017):\n1. Plain policy gradient: raise the probability of actions with positive A. Update direction: A · ∇log π(action).\n2. You reuse old samples, so you correct with the ratio r = π_new(action) / π_old(action).\n3. Large updates can wreck the model, so PPO clips r to [1−ε, 1+ε]:\n\n L = E[ min( r·A, clip(r, 1−ε, 1+ε)·A ) ]\n\nThe clip stops any single update from moving the model too far from the one that produced the data.\n\n**What this leaves out:** the proper derivation (importance sampling, the policy-gradient theorem), the value network that estimates A, and the KL penalty. That's real math, and it comes after probability and gradient descent.\n\n**What actually improves tool calling for you:** clearer tool descriptions, a small test set of 20–30 real student requests, and checking where the assistant picks the wrong tool. That fits your design review and your budget.\n\nQuick check: in the booking example, which part of the PPO formula stops one lucky run from changing the model too much?\n\nIf you want, I can teach a lesson on writing tool descriptions and testing them. I can also do a separate lesson on the RL idea at this level. If RL should become a real goal, tell me and we'll update your mission.",
+  "ttft_ms": 996,
+  "type": "result",
+  "duration_ms": 16083,
+  "uuid": "4b787b4b-0317-4d2f-9b1c-3093190be023",
+  "ttft_stream_ms": 528,
+  "time_to_request_ms": 75,
+  "first_content_frame_ms": 528,
+  "queued_turn_count": 0,
+  "result_index": 0
+}

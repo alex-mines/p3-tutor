@@ -1,0 +1,41 @@
+{
+  "id": "0002",
+  "items": [
+    {
+      "id": "q1",
+      "answer": "c",
+      "rationale": "The model keeps nothing between calls; what looks like memory is the program re-sending earlier text. A new chat with nothing saved gives the model only its own input. Options a and d treat the model, or the window, as remembering conversations (M3); b assumes a summary nobody wrote or saved.",
+      "distractors": {"a": "M3", "d": "M3"}
+    },
+    {
+      "id": "q2",
+      "answer": 9000,
+      "tolerance": 0,
+      "rationale": "Call 1 reads 2,000; call 2 reads 2,000 + 1,000 = 3,000; call 3 reads 4,000. Total 2,000 + 3,000 + 4,000 = 9,000. Answering 4,000 counts only the last call; 4,000 or 5,000 for new text only misses that history is re-sent."
+    },
+    {
+      "id": "q3",
+      "answer": "b",
+      "rationale": "Retrieval puts only the few relevant passages into context, so each call stays small. Pasting everything (a) is paid for on every call and may not fit; relying on training (c) cannot know your manuals; notes (d) are for facts about students, and the model does not remember them by itself.",
+      "distractors": {"d": "M3"}
+    },
+    {
+      "id": "q4",
+      "answer": "The program must write the training status to storage outside the context (a file or database) when it changes, and read that student's record into the context at the start of their next session.",
+      "accepted": [
+        "Save the status to notes or a database when it is known, then load it back into context when the student returns.",
+        "Write it to storage after training, and read it at the start of the next session."
+      ],
+      "rationale": "Full credit needs both halves: write to storage outside the context, and read it back into context next time. Only one half is partial. Saying the model will remember it automatically is wrong (M3)."
+    },
+    {
+      "id": "q5",
+      "answer": "A context window only limits what one call can read; it is not storage, so nothing survives into the next session unless the program saves it and loads it again.",
+      "accepted": [
+        "The window is only what one call can read. Once the session ends it is gone, so the program still has to save notes.",
+        "A bigger window holds more in one call but does not persist between sessions."
+      ],
+      "rationale": "Full credit: the window is per-call and not persistent, so saving is still needed. Saying only that it is expensive is partial. Saying the larger window would remember students is wrong (M3)."
+    }
+  ]
+}

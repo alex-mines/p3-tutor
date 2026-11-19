@@ -1,0 +1,113 @@
+{
+  "duration_api_ms": 143957,
+  "stop_reason": "end_turn",
+  "session_id": "d5557a10-1bba-4571-adad-17c9209be62b",
+  "total_cost_usd": 0.5283968,
+  "usage": {
+    "input_tokens": 20,
+    "cache_creation_input_tokens": 60462,
+    "cache_read_input_tokens": 439900,
+    "output_tokens": 19502,
+    "output_tokens_details": {
+      "thinking_tokens": 741
+    },
+    "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+    },
+    "service_tier": "standard",
+    "cache_creation": {
+      "ephemeral_1h_input_tokens": 60462,
+      "ephemeral_5m_input_tokens": 0
+    },
+    "inference_geo": "global",
+    "iterations": [
+      {
+        "input_tokens": 2,
+        "output_tokens": 537,
+        "cache_read_input_tokens": 73542,
+        "cache_creation_input_tokens": 1284,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 1284
+        },
+        "type": "message"
+      }
+    ],
+    "speed": "standard",
+    "fallback_credit": null
+  },
+  "modelUsage": {
+    "claude-sonnet-5-5": {
+      "inputTokens": 20,
+      "outputTokens": 19502,
+      "cacheReadInputTokens": 439900,
+      "cacheCreationInputTokens": 60462,
+      "webSearchRequests": 0,
+      "costUSD": 0.48089800000000005,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 741,
+      "canonicalModel": "claude-sonnet-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    },
+    "claude-haiku-5-5": {
+      "inputTokens": 56068,
+      "outputTokens": 3784,
+      "cacheReadInputTokens": 0,
+      "cacheCreationInputTokens": 0,
+      "webSearchRequests": 4,
+      "costUSD": 0.047498799999999994,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 1249,
+      "canonicalModel": "claude-haiku-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+    "spawned": 0,
+    "requested": {
+      "background": 0,
+      "foreground": 0,
+      "unset": 0
+    },
+    "started_in_background": 0,
+    "max_depth": 0,
+    "spawned_by_subagents": 0,
+    "completed": 0,
+    "failed": 0,
+    "killed": {
+      "parent": 0,
+      "user": 0,
+      "system": 0
+    },
+    "refused": {
+      "depth_limit": 0,
+      "concurrency_limit": 0,
+      "budget": 0
+    },
+    "by_type": {}
+  },
+  "safety_stops": 0,
+  "is_error": false,
+  "num_turns": 23,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "The 30-minute lesson on O3 is written: `lessons/0001-context-and-memory-in-an-agent.html`. I haven't opened it in a browser or counted its words. I judged the length from my section plan, so check that it reads as about 30 minutes.\n\nIt opens with the win: you can decide whether each piece of information in the makerspace assistant belongs in the context window, in saved notes, or in a searchable manual. It covers four ideas:\n- **Context window:** what the model sees on one call, why a bigger window isn't automatically better, and why tokens cost money.\n- **Between steps:** the model keeps nothing between calls, so the program re-sends the whole history each time. A worked token table shows cost growing faster than the number of steps. Those token sizes are made up for illustration.\n- **Between sessions:** notes as memory, with the risk of stale notes and the alternative of looking the fact up in the real record.\n- **Retrieval:** chunking, search, and how a search can fail, ending with a comparison table of window, notes and retrieval.\n\nThere's a recall warm-up on the agent loop, four figures, a \"common mix-up\" box in each section, four practice checks with instant feedback, a worked example, and a \"your turn\" exercise.\n\nA five-item quiz (`quizzes/0002.json`, key in `keys/0002.json`) is ready whenever you want to take it. I also added `RESOURCES.md` and a line in `NOTES.md`. I skipped a cheat sheet for now.\n\nYou can ask me anything about the lesson here.\n\nOne question: do you want a one-page cheat sheet of the window, notes and retrieval comparison for your design review?",
+  "ttft_ms": 1092,
+  "type": "result",
+  "duration_ms": 136127,
+  "uuid": "25e3e9d4-8fe7-40fb-8c98-b8164630e6ad",
+  "ttft_stream_ms": 734,
+  "time_to_request_ms": 89,
+  "first_content_frame_ms": 734,
+  "queued_turn_count": 0,
+  "result_index": 0
+}

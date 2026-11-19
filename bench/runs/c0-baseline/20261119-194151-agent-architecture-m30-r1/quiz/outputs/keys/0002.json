@@ -1,0 +1,44 @@
+{
+  "id": "0002",
+  "items": [
+    {
+      "id": "q1",
+      "answer": "a",
+      "rationale": "In an agent the model owns the control flow: after each result it chooses the next action or decides to stop. Code that follows a fixed script (b) is a workflow, and tools only run when asked, they do not choose what comes next (d).",
+      "distractors": {"b": "M8", "d": "M4"}
+    },
+    {
+      "id": "q2",
+      "answer": "A workflow: the code fixes the steps and their order, and the model does not choose them.",
+      "accepted": [
+        "workflow, because the code sets the order of the steps",
+        "A workflow, the steps and order are predefined in code",
+        "workflow; the control flow is written in code ahead of time"
+      ],
+      "rationale": "Full credit needs the label (workflow) and the reason: the developer's code fixes the sequence ahead of time, even though the model is called at two of the steps. Calling it a workflow without the reason is partial. Calling it an agent because it uses a model and a tool shows M8 (confusing using a model or tools with owning the control flow)."
+    },
+    {
+      "id": "q3",
+      "answer": "c",
+      "rationale": "When the steps are known and always the same, a fixed workflow is predictable and uses the fewest model calls, which suits a small budget. An agent (a, d) or several agents (b) add cost and unpredictability for flexibility the task does not need.",
+      "distractors": {"a": "M7", "b": "M7", "d": "M7"}
+    },
+    {
+      "id": "q4",
+      "answer": "b",
+      "rationale": "A workflow is defined by who owns the control flow, not by whether a model is involved: code fixes the path, and the model can be called at any step, with or without tools. Choosing the next step is what an agent does (c).",
+      "distractors": {"a": "M8", "c": "M8", "d": "M8"}
+    },
+    {
+      "id": "q5",
+      "answer": 6,
+      "tolerance": 0.01,
+      "rationale": "Workflow: 1,000 x 3 x $0.002 = $6. Agent: 1,000 x 6 x $0.002 = $12. The difference is $6. An answer of 12 or 6 reported as the agent's total shows the learner stopped before subtracting the workflow cost."
+    },
+    {
+      "id": "q6",
+      "answer": "d",
+      "rationale": "When the number and kind of steps cannot be known in advance, the model has to steer: an agent that picks its own searches fits, with a step limit as the stopping condition. A fixed path (a, b) cannot adapt, and answering without tools (c) cannot read the manuals."
+    }
+  ]
+}

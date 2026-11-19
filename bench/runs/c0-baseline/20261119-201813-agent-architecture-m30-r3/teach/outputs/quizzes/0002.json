@@ -1,0 +1,56 @@
+{
+  "id": "0002",
+  "objective": "O3",
+  "title": "Context and memory in an agent",
+  "items": [
+    {
+      "id": "q1",
+      "type": "mcq",
+      "objective": "O3",
+      "stem": "A student finished bandsaw training on Monday and chats with your assistant. On Friday they open a new session. Your program saves nothing and sends only the system prompt and tool descriptions. What can the model use about Monday?",
+      "options": [
+        {"id": "a", "text": "Nothing, because the Monday chat is not in the text it receives"},
+        {"id": "b", "text": "A summary, because the model keeps a private memory of each user"},
+        {"id": "c", "text": "The whole chat, because the model stores every conversation it had"},
+        {"id": "d", "text": "The training fact, because training updates the model within a day"}
+      ]
+    },
+    {
+      "id": "q2",
+      "type": "numeric",
+      "objective": "O3",
+      "stem": "Each model call rereads the whole transcript. The system prompt, tool descriptions and question total 1,000 tokens. Call 1 requests a tool whose result adds 500 tokens. Call 2 requests another tool whose result adds 500 tokens. Call 3 writes the final answer. Ignoring the tokens the model writes, how many input tokens are read across the three calls in total?",
+      "unit": "tokens"
+    },
+    {
+      "id": "q3",
+      "type": "mcq",
+      "objective": "O3",
+      "stem": "Your 400-page laser cutter manual is far too long to place in every context. Which design answers manual questions at the lowest cost per request while still finding the right page?",
+      "options": [
+        {"id": "a", "text": "Index chunks of the manual and have a tool return the best few matches"},
+        {"id": "b", "text": "Paste the whole manual into the system prompt so it is always available"},
+        {"id": "c", "text": "Save the whole manual as a note and load it at the start of each session"},
+        {"id": "d", "text": "Ask the model to recall the manual from its training and skip any lookup"}
+      ]
+    },
+    {
+      "id": "q4",
+      "type": "short",
+      "objective": "O3",
+      "stem": "In one sentence, what is the difference between the context window and the notes an agent saves between sessions?"
+    },
+    {
+      "id": "q5",
+      "type": "mcq",
+      "objective": "O3",
+      "stem": "Your assistant answers a question about 'kerf' but fails when a student asks about 'the width of the cut', though the manual only uses 'kerf'. Which statement best explains this and its fix?",
+      "options": [
+        {"id": "a", "text": "Keyword search missed the different wording; add meaning-based search too"},
+        {"id": "b", "text": "Meaning-based search missed the exact word; remove it and keep keywords"},
+        {"id": "c", "text": "The context window was full; switch to a model with a larger window"},
+        {"id": "d", "text": "The notes were stale; save the full chat transcript for each student"}
+      ]
+    }
+  ]
+}

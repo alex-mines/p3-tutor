@@ -1,0 +1,49 @@
+{
+  "id": "0002",
+  "items": [
+    {
+      "id": "q1",
+      "answer": "b",
+      "rationale": "In a workflow, code written in advance decides the order of steps; in an agent, the model decides its own next step and tool use. Workflows can also call models (a) and use tools (c), and both can take many steps (d).",
+      "distractors": {"a": "M8"}
+    },
+    {
+      "id": "q2",
+      "answer": "c",
+      "rationale": "The step order is fixed in the program, so the program owns the control flow; the model only does a task inside two of the steps. Calling a model does not make a system an agent. Picking a or b shows the belief that using a model for a step means the model is in control (M8).",
+      "distractors": {"a": "M8", "b": "M8"}
+    },
+    {
+      "id": "q3",
+      "answer": "a",
+      "rationale": "Booking has known steps in a known order, so fixed code can run them predictably and cheaply. The other tasks need an open-ended number of steps or a choice of what to look at, which is where an agent's flexibility pays off.",
+      "distractors": {"b": "M7", "c": "M7", "d": "M7"}
+    },
+    {
+      "id": "q4",
+      "answer": "A workflow makes a fixed, small number of model calls, while an agent loops for as many calls as it decides it needs, and every call costs tokens.",
+      "accepted": [
+        "The workflow has a set number of model calls but an agent may loop many times, each costing tokens.",
+        "An agent's loop adds extra model calls and tokens that a fixed sequence of steps does not need.",
+        "Fewer model calls, because the steps are fixed, so fewer tokens are used."
+      ],
+      "rationale": "The key idea is that the workflow's calls are fixed and few, while the agent's number of calls is open-ended and each one costs tokens. Saying only that agents are 'slower' or 'more complex' without tying it to the number of model calls is partial."
+    },
+    {
+      "id": "q5",
+      "answer": "d",
+      "rationale": "Keep the predictable parts as a fixed workflow and use an agent only where the number of steps cannot be known in advance, with a step limit to cap the cost. Rebuilding everything as an agent (a) pays the agent's cost for tasks that do not need it (M7). Fixed steps for every count (b) cannot cover an unbounded range, and guessing free times (c) drops the data the answer depends on.",
+      "distractors": {"a": "M7"}
+    },
+    {
+      "id": "q6",
+      "answer": "An agent costs more and is less predictable, and it only pays off when the steps cannot be known in advance; tasks with known steps are done as well, and more cheaply, by a fixed workflow.",
+      "accepted": [
+        "Agents use more model calls, so cost more, and a fixed workflow does a known-steps task just as well.",
+        "It is not better for every task: for steps known in advance, a workflow is cheaper, faster and more predictable.",
+        "Agents are less predictable and harder to test, which is unnecessary when the steps are already known."
+      ],
+      "rationale": "Full credit names a cost of the agent (more model calls, money, latency or unpredictability) or says the choice depends on whether the steps are known ahead. 'Agents are more advanced' repeats the false rule and is wrong (M7)."
+    }
+  ]
+}

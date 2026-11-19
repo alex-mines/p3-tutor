@@ -1,0 +1,99 @@
+{
+  "duration_api_ms": 18828,
+  "stop_reason": "end_turn",
+  "session_id": "a5eb72c1-203c-4e30-b56d-844bb4e754ce",
+  "total_cost_usd": 0.1285324,
+  "usage": {
+    "input_tokens": 8,
+    "cache_creation_input_tokens": 23566,
+    "cache_read_input_tokens": 114824,
+    "output_tokens": 2277,
+    "output_tokens_details": {
+      "thinking_tokens": 878
+    },
+    "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+    },
+    "service_tier": "standard",
+    "cache_creation": {
+      "ephemeral_1h_input_tokens": 23566,
+      "ephemeral_5m_input_tokens": 0
+    },
+    "inference_geo": "global",
+    "iterations": [
+      {
+        "input_tokens": 2,
+        "output_tokens": 576,
+        "cache_read_input_tokens": 37049,
+        "cache_creation_input_tokens": 881,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 881
+        },
+        "type": "message"
+      }
+    ],
+    "speed": "standard",
+    "fallback_credit": null
+  },
+  "modelUsage": {
+    "claude-sonnet-5-5": {
+      "inputTokens": 8,
+      "outputTokens": 2277,
+      "cacheReadInputTokens": 114824,
+      "cacheCreationInputTokens": 23566,
+      "webSearchRequests": 0,
+      "costUSD": 0.1285324,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 878,
+      "canonicalModel": "claude-sonnet-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+    "spawned": 0,
+    "requested": {
+      "background": 0,
+      "foreground": 0,
+      "unset": 0
+    },
+    "started_in_background": 0,
+    "max_depth": 0,
+    "spawned_by_subagents": 0,
+    "completed": 0,
+    "failed": 0,
+    "killed": {
+      "parent": 0,
+      "user": 0,
+      "system": 0
+    },
+    "refused": {
+      "depth_limit": 0,
+      "concurrency_limit": 0,
+      "budget": 0
+    },
+    "by_type": {}
+  },
+  "safety_stops": 0,
+  "is_error": false,
+  "num_turns": 9,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "Think of a restaurant.\n\nYou're the customer, and you're the model. You're smart, but you're stuck at your table and can't go into the kitchen. You can only do two things: talk, and write on a slip of paper.\n\nThe **menu** is the list of tools. Each dish has a name and a short description, such as \"check the calendar: give a date and a machine, get back the free slots\". It's your only way to know what the kitchen can do.\n\nWhen you want something, you write an **order slip**: \"Calendar check: laser cutter, Friday\". That slip is a tool call. It's only text. Writing it doesn't cook anything.\n\nThe **waiter** is the program around the model. They read your slip, walk to the kitchen, and get it made. The kitchen is the real calendar system. The waiter brings the dish back and puts it on your table. That's the tool result. Now you can read it and decide what to do next: order again (\"book the 2 pm slot\") or tell the waiter you're done and give your answer.\n\nThree things to take from this:\n\n- The model never does the action. It only asks. The program does the work.\n- The menu matters. You can only order what the descriptions let you understand, so clear descriptions get you better orders. That's your \"write a good tool description\" goal.\n- Each time the waiter comes back, they hand you the whole story so far, because you start each moment fresh. That's why long conversations cost more.\n\nWhere the analogy breaks: a real customer might order something that isn't on the menu. A model sometimes does too, and your program has to catch that rather than assume the order is valid.\n\nQuick check, in your own words: if the model writes \"book laser cutter, Friday 2 pm\", has anything been booked yet? Who does the booking?\n\nI can turn this into a short lesson on the loop and tool descriptions for the makerspace assistant whenever you want one.",
+  "ttft_ms": 1050,
+  "type": "result",
+  "duration_ms": 19100,
+  "uuid": "84d60f55-784c-443d-8a6a-0bc605a06bc2",
+  "ttft_stream_ms": 722,
+  "time_to_request_ms": 108,
+  "first_content_frame_ms": 722,
+  "queued_turn_count": 0,
+  "result_index": 0
+}

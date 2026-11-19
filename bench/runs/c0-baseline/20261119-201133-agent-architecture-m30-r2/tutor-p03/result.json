@@ -1,0 +1,99 @@
+{
+  "duration_api_ms": 15918,
+  "stop_reason": "end_turn",
+  "session_id": "47077303-8e37-4dbc-adae-65c440bc8e6f",
+  "total_cost_usd": 0.1271521,
+  "usage": {
+    "input_tokens": 8,
+    "cache_creation_input_tokens": 23869,
+    "cache_read_input_tokens": 115101,
+    "output_tokens": 2015,
+    "output_tokens_details": {
+      "thinking_tokens": 285
+    },
+    "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+    },
+    "service_tier": "standard",
+    "cache_creation": {
+      "ephemeral_1h_input_tokens": 23869,
+      "ephemeral_5m_input_tokens": 0
+    },
+    "inference_geo": "global",
+    "iterations": [
+      {
+        "input_tokens": 2,
+        "output_tokens": 490,
+        "cache_read_input_tokens": 37251,
+        "cache_creation_input_tokens": 982,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 982
+        },
+        "type": "message"
+      }
+    ],
+    "speed": "standard",
+    "fallback_credit": null
+  },
+  "modelUsage": {
+    "claude-sonnet-5-5": {
+      "inputTokens": 8,
+      "outputTokens": 2015,
+      "cacheReadInputTokens": 115101,
+      "cacheCreationInputTokens": 23869,
+      "webSearchRequests": 0,
+      "costUSD": 0.1271521,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 285,
+      "canonicalModel": "claude-sonnet-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+    "spawned": 0,
+    "requested": {
+      "background": 0,
+      "foreground": 0,
+      "unset": 0
+    },
+    "started_in_background": 0,
+    "max_depth": 0,
+    "spawned_by_subagents": 0,
+    "completed": 0,
+    "failed": 0,
+    "killed": {
+      "parent": 0,
+      "user": 0,
+      "system": 0
+    },
+    "refused": {
+      "depth_limit": 0,
+      "concurrency_limit": 0,
+      "budget": 0
+    },
+    "by_type": {}
+  },
+  "safety_stops": 0,
+  "is_error": false,
+  "num_turns": 11,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "No, that isn't right, and it matters for your design. A language model doesn't remember earlier conversations on its own. Your assistant won't remember what a student said last week unless you build that in.\n\nIt's an easy thing to assume, because chatbots feel like they remember. The reason is that the model only sees the text it is handed on each call. When a chat app seems to remember what you said five minutes ago, the app is resending the whole conversation every time. When the conversation ends, that text is gone, and the next conversation starts blank. This follows from what you already worked out in record 0001: the model knows its training plus the text it is given, and nothing else.\n\nHere is what that looks like for the makerspace.\n\n- **Without memory:** Sam says on Monday, \"I finished the laser cutter safety training.\" On the following Monday, Sam asks to book the laser cutter. The model has no idea about the training.\n- **With memory you build:** Your program saves \"Sam: laser cutter training done, Nov 11\" in a file or database. Next week, when Sam starts a session, your program looks up that record and puts it into the text the model receives. The model then appears to remember.\n\nSo memory is a design choice that you make in the program: what to save, where to keep it, and what to load at the start of a session. Your mission lists that as a skill to build.\n\nQuick check: if Sam's session from last week isn't saved anywhere, and the assistant starts a new session, what text does the model see about Sam?\n\nIf you'd like, I can write a lesson on context and memory next. It's the natural next step for your assistant.",
+  "ttft_ms": 1502,
+  "type": "result",
+  "duration_ms": 16883,
+  "uuid": "5fd2f0e6-b20d-4b36-8f3e-482fd6a64335",
+  "ttft_stream_ms": 554,
+  "time_to_request_ms": 119,
+  "first_content_frame_ms": 554,
+  "queued_turn_count": 0,
+  "result_index": 0
+}

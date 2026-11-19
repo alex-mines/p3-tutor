@@ -1,0 +1,50 @@
+{
+  "id": "0002",
+  "objective": "O3",
+  "title": "Context and memory in an agent",
+  "items": [
+    {
+      "id": "q1",
+      "type": "mcq",
+      "objective": "O3",
+      "stem": "A student chats with your assistant on Monday and says they are left-handed. On Wednesday they open a new session and the assistant has no idea. Nothing was saved. What is the correct explanation?",
+      "options": [
+        {"id": "a", "text": "The model forgot it because the old chat was too long to keep"},
+        {"id": "b", "text": "The new session began with an empty context, and nothing was loaded"},
+        {"id": "c", "text": "The context window filled up and pushed the old fact out of it"},
+        {"id": "d", "text": "The model deletes anything a student says about themselves overnight"}
+      ]
+    },
+    {
+      "id": "q2",
+      "type": "numeric",
+      "objective": "O3",
+      "stem": "In one request, the model is called 3 times. The setup text (instructions and tool descriptions) is 2,000 tokens, and the question is 100 tokens. After call 1, a tool result of 900 tokens is added to the history; after call 2, a tool result of 400 tokens is added. Nothing is ever removed from the history. How many input tokens are sent in total across the 3 calls?",
+      "unit": "tokens"
+    },
+    {
+      "id": "q3",
+      "type": "mcq",
+      "objective": "O3",
+      "stem": "Your assistant must answer from 40 machine manuals, about 3,000 pages in total, on a small budget. Which design is the best fit?",
+      "options": [
+        {"id": "a", "text": "Search the manuals and put only the best few chunks in context"},
+        {"id": "b", "text": "Put all 40 manuals in the instructions so the model sees everything"},
+        {"id": "c", "text": "Write all 40 manuals into a notes file that is loaded each session"},
+        {"id": "d", "text": "Let the model answer from training and skip the manuals entirely"}
+      ]
+    },
+    {
+      "id": "q4",
+      "type": "short",
+      "objective": "O3",
+      "stem": "Your retrieval tool returns the wrong table for a question about cutting speeds, and the assistant gives a wrong speed. In one sentence, what should you inspect first to find the fault, and why?"
+    },
+    {
+      "id": "q5",
+      "type": "short",
+      "objective": "O3",
+      "stem": "Your team proposes saving each student's training status as a note in the assistant's memory, even though the makerspace already has a training database. In one or two sentences, what risk does the note create, and what is the alternative?"
+    }
+  ]
+}

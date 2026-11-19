@@ -1,0 +1,33 @@
+{
+  "id": "0002",
+  "items": [
+    {
+      "id": "q1",
+      "answer": "b",
+      "rationale": "A context exists only for one session; a new session starts empty and only what is saved and loaded back can appear in it. Options a, c and d treat the model as if it keeps and loses memories on its own."
+    },
+    {
+      "id": "q2",
+      "answer": 8500,
+      "tolerance": 0.5,
+      "rationale": "Call 1 sends 2,000 + 100 = 2,100. Call 2 sends 2,100 + 900 = 3,000. Call 3 sends 3,000 + 400 = 3,400. Total 2,100 + 3,000 + 3,400 = 8,500. The history is re-sent in full each call."
+    },
+    {
+      "id": "q3",
+      "answer": "a",
+      "rationale": "Retrieval loads only the few relevant chunks per request. Loading all manuals (b or c) is far beyond a practical window and is paid for on every call; training knowledge (d) does not contain the makerspace's manuals."
+    },
+    {
+      "id": "q4",
+      "answer": "The chunks the search returned, to tell a retrieval failure from the model misreading a correct page.",
+      "accepted": ["what the search returned", "the retrieved chunks", "the retrieved chunks, to see if retrieval or the model is at fault", "the search results"],
+      "rationale": "The model answers from what is in its context, so first check whether the right chunk was retrieved. If not, fix chunking or search; if it was, the fault is in how the model used it."
+    },
+    {
+      "id": "q5",
+      "answer": "The note can go stale and the assistant would state wrong status confidently; look up the database with a tool instead.",
+      "accepted": ["stale copy; use a lookup tool", "it may be out of date; query the database", "the note could be outdated, so look it up in the training database"],
+      "rationale": "A copy can drift from the source of truth. A lookup tool returns the current record when needed."
+    }
+  ]
+}

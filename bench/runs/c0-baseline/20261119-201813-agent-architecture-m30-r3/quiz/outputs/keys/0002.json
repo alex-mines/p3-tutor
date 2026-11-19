@@ -1,0 +1,49 @@
+{
+  "id": "0002",
+  "items": [
+    {
+      "id": "q1",
+      "answer": "c",
+      "rationale": "The difference is who owns the control flow: in a workflow the developer's code fixes the steps in advance; in an agent the model decides the next step and which tool to use (Anthropic, 'Building effective agents'). Both can call tools (a), both can call the model several times (b), and model size does not define either (d).",
+      "distractors": {"a": "M7", "b": "M8", "d": "M9"}
+    },
+    {
+      "id": "q2",
+      "answer": "b",
+      "rationale": "Only in b does the model choose the next action and when to stop. In a, c and d the code fixes the path: a is routing (the model labels, the code dispatches), c is a lookup followed by one model call, d is a fixed chain. Choosing a shows the belief that any model-made decision makes a system an agent (M10).",
+      "distractors": {"a": "M10"}
+    },
+    {
+      "id": "q3",
+      "answer": "d",
+      "rationale": "When the steps are known in advance, fixed code gives the same path every time, uses the fewest model calls and is easy to test; an agent's flexibility buys nothing here. Agents can call any tool (a, c), and in a workflow the code, not the model, sets the order (b).",
+      "distractors": {"a": "M7", "b": "M11"}
+    },
+    {
+      "id": "q4",
+      "answer": "The program's code, which the developer wrote in advance",
+      "accepted": [
+        "the code",
+        "the program",
+        "the developer's code",
+        "the developer's program",
+        "predefined code",
+        "fixed code written in advance",
+        "the code the developer wrote in advance"
+      ],
+      "rationale": "In a workflow the order of steps is set by predefined code, not by the model. Answering 'the model' describes an agent and shows M11 (the model always chooses the next step)."
+    },
+    {
+      "id": "q5",
+      "answer": 600,
+      "tolerance": 0,
+      "rationale": "Per request the agent makes 5 - 2 = 3 more calls; over 200 requests that is 3 x 200 = 600 more calls. Answering 1000 or 400 is the total for only one of the two designs."
+    },
+    {
+      "id": "q6",
+      "answer": "a",
+      "rationale": "Use a fixed workflow where the steps are known, because it is cheaper and more predictable, and an agent only where the next step depends on what was found, because that is where its flexibility pays for its extra calls. Option c swaps the two jobs. Option b spends the budget on agent flexibility where none is needed (M12, an agent is always the better design); option d cannot handle a task whose next lookup depends on the last result.",
+      "distractors": {"b": "M12"}
+    }
+  ]
+}

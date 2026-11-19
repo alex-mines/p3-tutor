@@ -1,0 +1,42 @@
+{
+  "id": "0002",
+  "items": [
+    {
+      "id": "q1",
+      "answer": "b",
+      "rationale": "The line is who owns the control flow: in a workflow, predefined code decides the steps; in an agent, the model dynamically directs its own process and tool use (Anthropic, 'Building effective agents'). Both can make many model calls and use tools, so a, c and d describe differences that do not exist."
+    },
+    {
+      "id": "q2",
+      "answer": "d",
+      "rationale": "This is a routing workflow: the model does one job (labelling), but the code decides what happens next from fixed paths. Using a model somewhere does not make a system an agent; the model has to direct the path."
+    },
+    {
+      "id": "q3",
+      "answer": "a",
+      "rationale": "When the steps are known and always the same, a fixed workflow gives predictability and avoids the extra model calls an agent spends deciding what to do. An agent is not always cheaper (c), and a workflow does not handle arbitrary requests without changes (d)."
+    },
+    {
+      "id": "q4",
+      "answer": 600,
+      "tolerance": 0,
+      "rationale": "The difference per request is 5 - 2 = 3 calls, and 3 x 200 = 600 extra calls."
+    },
+    {
+      "id": "q5",
+      "answer": "The steps cannot be known in advance, so the model has to decide them as it goes (an open-ended task).",
+      "accepted": [
+        "The task is open-ended and the steps cannot be predicted in advance",
+        "The number or order of steps is unpredictable and depends on what the model finds",
+        "The path varies with each input so the model must decide what to do next",
+        "It needs flexible, model-driven decisions because the steps can't be hard-coded"
+      ],
+      "rationale": "An agent pays off when the path cannot be fixed beforehand, because the number or order of steps depends on what comes back. Answers that only say the task is hard, important or big, without the unpredictable path, are partial or wrong."
+    },
+    {
+      "id": "q6",
+      "answer": "c",
+      "rationale": "A vague question needs an unknown number of searches, so the model must decide what to look up next from what it finds; that is where an agent's flexibility pays off. The other three have known steps and fit fixed code."
+    }
+  ]
+}

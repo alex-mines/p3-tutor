@@ -1,0 +1,113 @@
+{
+  "duration_api_ms": 18796,
+  "stop_reason": "end_turn",
+  "session_id": "6b376905-f019-4d93-b416-85e36681cd0a",
+  "total_cost_usd": 0.14420809999999998,
+  "usage": {
+    "input_tokens": 12,
+    "cache_creation_input_tokens": 24616,
+    "cache_read_input_tokens": 153377,
+    "output_tokens": 1866,
+    "output_tokens_details": {
+      "thinking_tokens": 284
+    },
+    "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+    },
+    "service_tier": "standard",
+    "cache_creation": {
+      "ephemeral_1h_input_tokens": 24616,
+      "ephemeral_5m_input_tokens": 0
+    },
+    "inference_geo": "global",
+    "iterations": [
+      {
+        "input_tokens": 2,
+        "output_tokens": 564,
+        "cache_read_input_tokens": 38514,
+        "cache_creation_input_tokens": 466,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 466
+        },
+        "type": "message"
+      }
+    ],
+    "speed": "standard",
+    "fallback_credit": null
+  },
+  "modelUsage": {
+    "claude-sonnet-5-5": {
+      "inputTokens": 12,
+      "outputTokens": 1866,
+      "cacheReadInputTokens": 153377,
+      "cacheCreationInputTokens": 24616,
+      "webSearchRequests": 0,
+      "costUSD": 0.1324857,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 284,
+      "canonicalModel": "claude-sonnet-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    },
+    "claude-haiku-5-5": {
+      "inputTokens": 13609,
+      "outputTokens": 723,
+      "cacheReadInputTokens": 0,
+      "cacheCreationInputTokens": 0,
+      "webSearchRequests": 1,
+      "costUSD": 0.011722400000000001,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 172,
+      "canonicalModel": "claude-haiku-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+    "spawned": 0,
+    "requested": {
+      "background": 0,
+      "foreground": 0,
+      "unset": 0
+    },
+    "started_in_background": 0,
+    "max_depth": 0,
+    "spawned_by_subagents": 0,
+    "completed": 0,
+    "failed": 0,
+    "killed": {
+      "parent": 0,
+      "user": 0,
+      "system": 0
+    },
+    "refused": {
+      "depth_limit": 0,
+      "concurrency_limit": 0,
+      "budget": 0
+    },
+    "by_type": {}
+  },
+  "safety_stops": 0,
+  "is_error": false,
+  "num_turns": 10,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "Neither: the premise isn't true. More agents don't always give better results, so \"five or ten?\" isn't the question to ask yet.\n\nAnthropic's engineering team measured this in their own research system. A single agent uses about 4x the tokens of a plain chat, and a multi-agent system about 15x. They say it only pays off when the task is valuable enough to cover that cost, and when the work splits into independent pieces that can run in parallel. They also say it fits poorly when the agents need to share a lot of context ([Anthropic: How we built our multi-agent research system](https://www.anthropic.com/engineering/multi-agent-research-system)).\n\nHere is what that means for your assistant. A student asks, \"Can I use the laser cutter Thursday at 3?\" One agent can handle it: look up the manual page, check the calendar, book the slot. Splitting that across ten agents means each one gets its own context, they pass messages back and forth, and you pay for every token twice over. Meanwhile your budget is small and the steps depend on each other. Ten agents would cost much more and probably answer no better.\n\nThe question to take to your design review is which parts really need an agent at all. Booking might be a fixed workflow with a few steps in a set order. Only the open-ended manual questions might need the model to decide what to do next.\n\nQuick check: take one real request to your assistant and name two steps that could run at the same time without needing each other's results. If you can't find two, that suggests a single agent is enough.\n\nI can write a lesson on workflows vs. agents vs. multi-agent systems if you'd like. It would give you a way to defend the decision at your review.\n\nSources:\n- [How we built our multi-agent research system](https://www.anthropic.com/engineering/multi-agent-research-system)",
+  "ttft_ms": 892,
+  "type": "result",
+  "duration_ms": 19027,
+  "uuid": "4a2bd9ad-6594-408d-a9c2-c9b35cde968a",
+  "ttft_stream_ms": 519,
+  "time_to_request_ms": 79,
+  "first_content_frame_ms": 520,
+  "queued_turn_count": 0,
+  "result_index": 0
+}

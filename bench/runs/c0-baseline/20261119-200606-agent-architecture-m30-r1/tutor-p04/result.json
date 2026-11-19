@@ -1,0 +1,113 @@
+{
+  "duration_api_ms": 21975,
+  "stop_reason": "end_turn",
+  "session_id": "4d8e500d-f619-4eb3-824b-249ac3adae2f",
+  "total_cost_usd": 0.1532614,
+  "usage": {
+    "input_tokens": 14,
+    "cache_creation_input_tokens": 25790,
+    "cache_read_input_tokens": 185960,
+    "output_tokens": 1937,
+    "output_tokens_details": {
+      "thinking_tokens": 193
+    },
+    "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+    },
+    "service_tier": "standard",
+    "cache_creation": {
+      "ephemeral_1h_input_tokens": 25790,
+      "ephemeral_5m_input_tokens": 0
+    },
+    "inference_geo": "global",
+    "iterations": [
+      {
+        "input_tokens": 2,
+        "output_tokens": 567,
+        "cache_read_input_tokens": 39761,
+        "cache_creation_input_tokens": 393,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 393
+        },
+        "type": "message"
+      }
+    ],
+    "speed": "standard",
+    "fallback_credit": null
+  },
+  "modelUsage": {
+    "claude-sonnet-5-5": {
+      "inputTokens": 14,
+      "outputTokens": 1937,
+      "cacheReadInputTokens": 185960,
+      "cacheCreationInputTokens": 25790,
+      "webSearchRequests": 0,
+      "costUSD": 0.141154,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 193,
+      "canonicalModel": "claude-sonnet-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    },
+    "claude-haiku-5-5": {
+      "inputTokens": 14339,
+      "outputTokens": 1347,
+      "cacheReadInputTokens": 0,
+      "cacheCreationInputTokens": 0,
+      "webSearchRequests": 1,
+      "costUSD": 0.0121074,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 436,
+      "canonicalModel": "claude-haiku-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+    "spawned": 0,
+    "requested": {
+      "background": 0,
+      "foreground": 0,
+      "unset": 0
+    },
+    "started_in_background": 0,
+    "max_depth": 0,
+    "spawned_by_subagents": 0,
+    "completed": 0,
+    "failed": 0,
+    "killed": {
+      "parent": 0,
+      "user": 0,
+      "system": 0
+    },
+    "refused": {
+      "depth_limit": 0,
+      "concurrency_limit": 0,
+      "budget": 0
+    },
+    "by_type": {}
+  },
+  "safety_stops": 0,
+  "is_error": false,
+  "num_turns": 13,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "The premise isn't right, so neither five nor ten is the answer yet. More agents don't always give better results.\n\nIt's tempting because Anthropic's multi-agent research system beat a single agent by about 90% on their internal test. But the same write-up says multi-agent systems use about 15× the tokens of a chat, against about 4× for a single agent. Much of the gain came from spending more tokens, not from having more agents. They say it pays off only for high-value tasks that split into parallel pieces, such as broad research. (These are Anthropic's own numbers, and I found no independent check.)\n\nFor your assistant, picture a student asking \"Is the laser cutter free Friday, and book me 2 pm.\"\n- Look up the manual, check the calendar, book the slot. Each step needs the result of the one before, so extra agents can't work in parallel. They'd only add handoffs, repeated context and cost.\n- With a small budget, a fixed workflow or one agent with three tools is the likely starting point.\n- Splitting starts to make sense if the manuals grow so large that one context can't hold the work, or if many independent lookups really can run side by side. Even then, start with 2 or 3 agents, not 5 or 10, and only if you can measure that it helps.\n\nFor your design review, \"we chose one agent plus tools because the steps are sequential and cost matters\" is a defensible position.\n\nQuick check: which of the three tasks (manual lookup, calendar check, booking) could run at the same time, and which must wait for another?\n\nI can also write a lesson on when splitting pays off, since multi-agent systems are on your mission list.\n\nSources:\n- [Anthropic Engineering: How we built our multi-agent research system](https://www.anthropic.com/engineering/multi-agent-research-system)",
+  "ttft_ms": 714,
+  "type": "result",
+  "duration_ms": 22233,
+  "uuid": "19b8b935-9b5a-4167-819d-8630f423c4a8",
+  "ttft_stream_ms": 593,
+  "time_to_request_ms": 80,
+  "first_content_frame_ms": 594,
+  "queued_turn_count": 0,
+  "result_index": 0
+}

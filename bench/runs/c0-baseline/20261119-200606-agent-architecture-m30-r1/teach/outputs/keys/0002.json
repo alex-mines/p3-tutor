@@ -1,0 +1,40 @@
+{
+  "id": "0002",
+  "items": [
+    {
+      "id": "q1",
+      "answer": "a",
+      "rationale": "Nothing is kept between sessions unless the program saves it and loads it into the new context. The model does not learn from users (b), tools do not write into the model (c), and the window holds only what is sent in one call (d). Picking b or d shows the belief that memory between sessions is automatic (M3).",
+      "distractors": {"b": "M3", "d": "M3"}
+    },
+    {
+      "id": "q2",
+      "answer": 3900,
+      "tolerance": 0,
+      "rationale": "Call 1 reads 800 + 100 = 900. Call 2 reads 900 + 400 = 1300. Call 3 reads 1300 + 400 = 1700. Total 900 + 1300 + 1700 = 3900. Answering 1700 counts only the last call and misses that each call re-reads the whole history."
+    },
+    {
+      "id": "q3",
+      "answer": "b",
+      "rationale": "Retrieval puts only the best few chunks in the context, so each call reads a small amount. Putting everything in the prompt (a) is re-read and paid for on every call, one summarized page (c) loses detail, and making students paste pages (d) pushes the work onto users."
+    },
+    {
+      "id": "q4",
+      "answer": "A record is exact and the program can check it itself, whereas a note written by the model can be wrong, vague or changed by mistake.",
+      "accepted": [
+        "The program can check it exactly; a model-written note might be wrong.",
+        "It must be accurate because it gates access, and a free-text note can be wrong or misread."
+      ],
+      "rationale": "Full credit names a reason tied to exactness or control: access to a machine depends on the status, so it must be exact and checkable by the program, and a model-written note can be wrong. Saying only that it is easier or faster is partial or wrong."
+    },
+    {
+      "id": "q5",
+      "answer": "The chunk has lost its setting and does not say which machine or section it is from, so add that context, such as the machine and section name, to the chunk before indexing it.",
+      "accepted": [
+        "It does not say which machine it is for; label each chunk with its machine and section.",
+        "It lacks context about where it came from; prepend a short description of the machine and section."
+      ],
+      "rationale": "Full credit needs both parts: the chunk lacks its source or setting, and the fix is to add that context to the chunk. Saying only that more chunks should be returned, or that the model should be retrained, is wrong."
+    }
+  ]
+}

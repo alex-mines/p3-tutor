@@ -1,0 +1,99 @@
+{
+  "duration_api_ms": 12926,
+  "stop_reason": "end_turn",
+  "session_id": "8321a69f-b824-44d3-a6b1-4303c10a44df",
+  "total_cost_usd": 0.11556960000000001,
+  "usage": {
+    "input_tokens": 6,
+    "cache_creation_input_tokens": 22862,
+    "cache_read_input_tokens": 77796,
+    "output_tokens": 1633,
+    "output_tokens_details": {
+      "thinking_tokens": 175
+    },
+    "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+    },
+    "service_tier": "standard",
+    "cache_creation": {
+      "ephemeral_1h_input_tokens": 22862,
+      "ephemeral_5m_input_tokens": 0
+    },
+    "inference_geo": "global",
+    "iterations": [
+      {
+        "input_tokens": 2,
+        "output_tokens": 471,
+        "cache_read_input_tokens": 36376,
+        "cache_creation_input_tokens": 850,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 850
+        },
+        "type": "message"
+      }
+    ],
+    "speed": "standard",
+    "fallback_credit": null
+  },
+  "modelUsage": {
+    "claude-sonnet-5-5": {
+      "inputTokens": 6,
+      "outputTokens": 1633,
+      "cacheReadInputTokens": 77796,
+      "cacheCreationInputTokens": 22862,
+      "webSearchRequests": 0,
+      "costUSD": 0.11556960000000001,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 175,
+      "canonicalModel": "claude-sonnet-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+    "spawned": 0,
+    "requested": {
+      "background": 0,
+      "foreground": 0,
+      "unset": 0
+    },
+    "started_in_background": 0,
+    "max_depth": 0,
+    "spawned_by_subagents": 0,
+    "completed": 0,
+    "failed": 0,
+    "killed": {
+      "parent": 0,
+      "user": 0,
+      "system": 0
+    },
+    "refused": {
+      "depth_limit": 0,
+      "concurrency_limit": 0,
+      "budget": 0
+    },
+    "by_type": {}
+  },
+  "safety_stops": 0,
+  "is_error": false,
+  "num_turns": 9,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "No, that isn't right. A language model doesn't remember earlier conversations on its own, so your assistant won't remember what students told it last week unless you build that in.\n\nA model only \"knows\" two things: what it learned in training, and the text in front of it right now (its context). Each conversation starts blank. Chatbots that seem to remember are doing it with extra code around the model.\n\nHere's an example with your makerspace assistant. Maya tells it on Monday, \"I finished the laser cutter training.\" On Thursday she asks, \"Can I book the laser cutter?\" A bare model has no idea who Maya is or what she said. For it to answer correctly, your code has to:\n\n1. Save \"Maya: laser cutter training done\" somewhere outside the model, such as a database or a JSON file.\n2. When Maya comes back, look that record up.\n3. Put it into the text sent to the model, along with her new question.\n\nThe model then appears to remember, but only because you handed the note back to it.\n\nThis is already your next topic. The mission says the assistant has to remember each student's training status between visits, and this is the design choice behind that: what to keep in the context, what to save between sessions, and what that costs. Everything you put back into the context is extra text on every request, which counts against your budget.\n\nQuick check: in your own words, which part of the system remembers Maya's training, the model or your code? What would your code have to do on Thursday?\n\nIf you want, ask me for a lesson on context and memory and I'll build one around the makerspace assistant.",
+  "ttft_ms": 785,
+  "type": "result",
+  "duration_ms": 13115,
+  "uuid": "02b3bb3b-20ad-4a7f-8fca-1be63fb263f9",
+  "ttft_stream_ms": 612,
+  "time_to_request_ms": 86,
+  "first_content_frame_ms": 613,
+  "queued_turn_count": 0,
+  "result_index": 0
+}

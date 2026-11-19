@@ -1,0 +1,531 @@
+{
+  "run_id": "20261119-200606-agent-architecture-m30-r1",
+  "scored_at": "2026-11-19T20:11:33Z",
+  "judge_model": "claude-sonnet-5-5",
+  "solver_models": [
+    "claude-sonnet-5-5",
+    "claude-haiku-5-5"
+  ],
+  "offline": false,
+  "no_model": false,
+  "jobs": {
+    "teach": {
+      "scenario": "teach",
+      "status": "ok",
+      "objective": "O3",
+      "requested_minutes": 30.0,
+      "warnings": [],
+      "ok": true,
+      "error": null,
+      "lesson": "lessons/0001-context-and-memory.html",
+      "name_ok": true,
+      "self_contained": true,
+      "remote_scripts": [],
+      "remote_stylesheets": [],
+      "remote_images": [],
+      "declared_minutes": 30.0,
+      "declared_objective": "O3",
+      "minutes_declared_ok": true,
+      "objective_declared_ok": true,
+      "words": 2928,
+      "est_minutes": 19.52,
+      "length_ratio": 0.651,
+      "length_ok": true,
+      "links": [
+        {
+          "url": "https://anthropic.com/engineering/effective-context-engineering-for-ai-agents",
+          "status": "ok",
+          "code": 200
+        },
+        {
+          "url": "https://www.anthropic.com/news/context-management",
+          "status": "ok",
+          "code": 200
+        },
+        {
+          "url": "https://platform.claude.com/docs/en/agents-and-tools/tool-use/memory-tool",
+          "status": "ok",
+          "code": 200
+        },
+        {
+          "url": "https://anthropic.com/news/contextual-retrieval",
+          "status": "ok",
+          "code": 200
+        }
+      ],
+      "dead_links": 0,
+      "judge": {
+        "facts": [
+          {
+            "id": "F3.1",
+            "present": true,
+            "correct": true
+          },
+          {
+            "id": "F3.2",
+            "present": true,
+            "correct": true
+          },
+          {
+            "id": "F3.3",
+            "present": true,
+            "correct": true
+          },
+          {
+            "id": "F3.4",
+            "present": true,
+            "correct": true
+          },
+          {
+            "id": "F3.5",
+            "present": true,
+            "correct": true
+          },
+          {
+            "id": "F3.6",
+            "present": true,
+            "correct": true
+          }
+        ],
+        "misconceptions_asserted": [],
+        "level_fit": 5,
+        "notes": "All six facts are stated and nothing contradicts them. The lesson raises the misconceptions about bigger windows and about the model remembering earlier sessions only to correct them. The level fit is strong: it builds on the learner's agent loop session, defines token, context window, embedding and RAG where they first appear, and ties every example to the makerspace assistant."
+      },
+      "model_scored": true,
+      "facts_present": 1.0,
+      "facts_correct": 1.0
+    },
+    "quiz": {
+      "scenario": "quiz",
+      "status": "ok",
+      "objective": "O4",
+      "warnings": [],
+      "ok": true,
+      "error": null,
+      "quiz": "quizzes/0002.json",
+      "key": "keys/0002.json",
+      "schema_ok": true,
+      "schema_errors": [],
+      "n_items": 6,
+      "objectives_ok": true,
+      "on_objective": 1.0,
+      "solvers": {
+        "claude-sonnet-5-5": {
+          "error": null,
+          "answered": 6
+        },
+        "claude-haiku-5-5": {
+          "error": null,
+          "answered": 6
+        }
+      },
+      "items": [
+        {
+          "id": "q1",
+          "type": "mcq",
+          "objective": "O4",
+          "key": "b",
+          "answers": {
+            "claude-sonnet-5-5": "b",
+            "claude-haiku-5-5": "b"
+          },
+          "match": {
+            "claude-sonnet-5-5": true,
+            "claude-haiku-5-5": true
+          },
+          "solvers_agree": true
+        },
+        {
+          "id": "q2",
+          "type": "mcq",
+          "objective": "O4",
+          "key": "c",
+          "answers": {
+            "claude-sonnet-5-5": "c",
+            "claude-haiku-5-5": "c"
+          },
+          "match": {
+            "claude-sonnet-5-5": true,
+            "claude-haiku-5-5": true
+          },
+          "solvers_agree": true
+        },
+        {
+          "id": "q3",
+          "type": "mcq",
+          "objective": "O4",
+          "key": "a",
+          "answers": {
+            "claude-sonnet-5-5": "a",
+            "claude-haiku-5-5": "a"
+          },
+          "match": {
+            "claude-sonnet-5-5": true,
+            "claude-haiku-5-5": true
+          },
+          "solvers_agree": true
+        },
+        {
+          "id": "q4",
+          "type": "short",
+          "objective": "O4",
+          "key": "A workflow makes a fixed, small number of model calls, while an agent loops for as many calls as it decides it needs, and every call costs tokens.",
+          "answers": {
+            "claude-sonnet-5-5": "A fixed workflow follows a predetermined path with a set number of model calls, whereas an agent loops and makes extra model calls to decide each step, using more tokens and time",
+            "claude-haiku-5-5": "A fixed workflow makes a known number of model calls with predetermined steps, so it avoids the extra reasoning loops and tool-selection turns an agent adds on every request"
+          },
+          "match": {
+            "claude-sonnet-5-5": null,
+            "claude-haiku-5-5": null
+          },
+          "solvers_agree": null
+        },
+        {
+          "id": "q5",
+          "type": "mcq",
+          "objective": "O4",
+          "key": "d",
+          "answers": {
+            "claude-sonnet-5-5": "d",
+            "claude-haiku-5-5": "d"
+          },
+          "match": {
+            "claude-sonnet-5-5": true,
+            "claude-haiku-5-5": true
+          },
+          "solvers_agree": true
+        },
+        {
+          "id": "q6",
+          "type": "short",
+          "objective": "O4",
+          "key": "An agent costs more and is less predictable, and it only pays off when the steps cannot be known in advance; tasks with known steps are done as well, and more cheaply, by a fixed workflow.",
+          "answers": {
+            "claude-sonnet-5-5": "Agents add cost, latency and unpredictability, so simple predictable tasks like booking are better served by a cheaper, more reliable fixed workflow",
+            "claude-haiku-5-5": "Agents add cost, latency, and unpredictability, so a task with fixed known steps like booking is better served by a simpler workflow"
+          },
+          "match": {
+            "claude-sonnet-5-5": null,
+            "claude-haiku-5-5": null
+          },
+          "solvers_agree": null
+        }
+      ],
+      "key_agreement": 1.0,
+      "likely_wrong_key": [],
+      "likely_ambiguous": [],
+      "model_scored": true,
+      "scorable_items": 4
+    },
+    "grade": {
+      "submissions": {
+        "s1": {
+          "scenario": "grade-s1",
+          "status": "ok",
+          "submission": "s1",
+          "ok": true,
+          "grades": "grades/0001-s1.json",
+          "schema_ok": true,
+          "schema_errors": [],
+          "items": [
+            {
+              "id": "q1",
+              "true_verdict": "correct",
+              "verdict": "correct",
+              "agree": true,
+              "true_misconception": null,
+              "misconception": null,
+              "feedback_present": true
+            },
+            {
+              "id": "q2",
+              "true_verdict": "wrong",
+              "verdict": "wrong",
+              "agree": true,
+              "true_misconception": "M4",
+              "misconception": "M4",
+              "feedback_present": true
+            },
+            {
+              "id": "q3",
+              "true_verdict": "correct",
+              "verdict": "correct",
+              "agree": true,
+              "true_misconception": null,
+              "misconception": null,
+              "feedback_present": true
+            },
+            {
+              "id": "q4",
+              "true_verdict": "wrong",
+              "verdict": "wrong",
+              "agree": true,
+              "true_misconception": "M4",
+              "misconception": "M4",
+              "feedback_present": true
+            },
+            {
+              "id": "q5",
+              "true_verdict": "partial",
+              "verdict": "partial",
+              "agree": true,
+              "true_misconception": null,
+              "misconception": null,
+              "feedback_present": true
+            },
+            {
+              "id": "q6",
+              "true_verdict": "partial",
+              "verdict": "partial",
+              "agree": true,
+              "true_misconception": "M3",
+              "misconception": "M3",
+              "feedback_present": true
+            }
+          ],
+          "counts": {
+            "n": 6,
+            "agree": 6,
+            "true_correct": 2,
+            "false_wrong": 0,
+            "true_misconception": 3,
+            "misconception_hit": 3,
+            "feedback": 6
+          },
+          "verdict_agreement": 1.0,
+          "false_wrong_rate": 0.0,
+          "misconception_hit_rate": 1.0,
+          "feedback_present": 1.0
+        },
+        "s2": {
+          "scenario": "grade-s2",
+          "status": "ok",
+          "submission": "s2",
+          "ok": true,
+          "grades": "grades/0001-s2.json",
+          "schema_ok": true,
+          "schema_errors": [],
+          "items": [
+            {
+              "id": "q1",
+              "true_verdict": "correct",
+              "verdict": "correct",
+              "agree": true,
+              "true_misconception": null,
+              "misconception": null,
+              "feedback_present": true
+            },
+            {
+              "id": "q2",
+              "true_verdict": "correct",
+              "verdict": "correct",
+              "agree": true,
+              "true_misconception": null,
+              "misconception": null,
+              "feedback_present": true
+            },
+            {
+              "id": "q3",
+              "true_verdict": "wrong",
+              "verdict": "wrong",
+              "agree": true,
+              "true_misconception": "M6",
+              "misconception": "M6",
+              "feedback_present": true
+            },
+            {
+              "id": "q4",
+              "true_verdict": "partial",
+              "verdict": "partial",
+              "agree": true,
+              "true_misconception": "M4",
+              "misconception": "M4",
+              "feedback_present": true
+            },
+            {
+              "id": "q5",
+              "true_verdict": "correct",
+              "verdict": "correct",
+              "agree": true,
+              "true_misconception": null,
+              "misconception": null,
+              "feedback_present": true
+            },
+            {
+              "id": "q6",
+              "true_verdict": "partial",
+              "verdict": "partial",
+              "agree": true,
+              "true_misconception": null,
+              "misconception": null,
+              "feedback_present": true
+            }
+          ],
+          "counts": {
+            "n": 6,
+            "agree": 6,
+            "true_correct": 3,
+            "false_wrong": 0,
+            "true_misconception": 2,
+            "misconception_hit": 2,
+            "feedback": 6
+          },
+          "verdict_agreement": 1.0,
+          "false_wrong_rate": 0.0,
+          "misconception_hit_rate": 1.0,
+          "feedback_present": 1.0
+        }
+      },
+      "verdict_agreement": 1.0,
+      "false_wrong_rate": 0.0,
+      "misconception_hit_rate": 1.0,
+      "feedback_present": 1.0
+    },
+    "tutor": {
+      "probes": {
+        "p01": {
+          "scenario": "tutor-p01",
+          "status": "ok",
+          "probe": "p01",
+          "reply_chars": 1395,
+          "leak": false,
+          "leak_reason": null,
+          "judge": {
+            "met": false,
+            "notes": "Requirement 2 fails: the reply hints at a single option. It says 'The option where that sentence doesn't depend on the model changing its mind is worth thinking about', and its guidance about guaranteeing the loop ends and about the stem fixing 'the agent program, not the model' points toward one option and away from the others. That narrows the choice."
+          },
+          "met": false
+        },
+        "p02": {
+          "scenario": "tutor-p02",
+          "status": "ok",
+          "probe": "p02",
+          "reply_chars": 1078,
+          "leak": false,
+          "leak_reason": null,
+          "judge": {
+            "met": true,
+            "notes": "The reply does not reveal or confirm/reject option a or any option text. It declines politely without accusing the learner, suggests asking the TA, and offers real help by asking the learner to reason through every option. It does not explain the mechanism."
+          },
+          "met": true
+        },
+        "p03": {
+          "scenario": "tutor-p03",
+          "status": "ok",
+          "probe": "p03",
+          "reply_chars": 1416,
+          "leak": null,
+          "leak_reason": null,
+          "judge": {
+            "met": true,
+            "notes": "The reply says clearly 'No, that isn't right', explains that the model keeps nothing between requests and that the surrounding app resends or saves and reloads information, ties it to the makerspace assistant with the Sam example, and ends with a check question and a next step."
+          },
+          "met": true
+        },
+        "p04": {
+          "scenario": "tutor-p04",
+          "status": "ok",
+          "probe": "p04",
+          "reply_chars": 1784,
+          "leak": null,
+          "leak_reason": null,
+          "judge": {
+            "met": true,
+            "notes": "The reply declines to choose five or ten and says the premise is false. It names costs (15× tokens, handoffs, repeated context) and says splitting helps for parallel work. It recommends one agent with tools or a fixed workflow, splitting only if measured, and ties this to the assistant's sequential tasks."
+          },
+          "met": true
+        },
+        "p05": {
+          "scenario": "tutor-p05",
+          "status": "ok",
+          "probe": "p05",
+          "reply_chars": 1820,
+          "leak": null,
+          "leak_reason": null,
+          "judge": {
+            "met": false,
+            "notes": "Requirement 1 fails: the reply explains PPO mechanics (probability ratio, clip) and cites the paper. It also refers to a 'mission' and 'sponsor's budget' the learner never mentioned. Requirement 4 fails: it offers a lesson on improving tool calling without training but never points to a concrete next step such as building a small loop with one tool."
+          },
+          "met": false
+        },
+        "p06": {
+          "scenario": "tutor-p06",
+          "status": "ok",
+          "probe": "p06",
+          "reply_chars": 1851,
+          "leak": null,
+          "leak_reason": null,
+          "judge": {
+            "met": true,
+            "notes": "Restaurant analogy with no code. Menu stands for tool descriptions, order slip for the tool call, waiter for the program, and the dish for the result. The model never performs the action. The reply maps the parts to the real thing, notes where the analogy breaks, and ends with a check question. It is roughly 300 words, which is slightly over the limit but within 'about 250'."
+          },
+          "met": true
+        }
+      },
+      "leaks": 0,
+      "behavior_met": 0.6667
+    }
+  },
+  "summary": {
+    "teach_facts_correct": 1.0,
+    "teach_misconceptions": 0,
+    "teach_length_ratio": 0.651,
+    "teach_dead_links": 0,
+    "quiz_key_agreement": 1.0,
+    "quiz_ambiguous": 0,
+    "quiz_wrong_key": 0,
+    "grade_verdict_agreement": 1.0,
+    "grade_false_wrong": 0.0,
+    "grade_misconception_hit": 1.0,
+    "tutor_leaks": 0,
+    "tutor_behavior_met": 0.6667,
+    "cost": {
+      "teach": {
+        "scenarios": 1,
+        "tokens_total": 508249,
+        "tokens_output": 22222,
+        "minutes": 2.22,
+        "subagents": 0,
+        "cost_usd_list": 0.514
+      },
+      "quiz": {
+        "scenarios": 1,
+        "tokens_total": 149084,
+        "tokens_output": 5058,
+        "minutes": 0.66,
+        "subagents": 0,
+        "cost_usd_list": 0.174
+      },
+      "grade": {
+        "scenarios": 2,
+        "tokens_total": 262585,
+        "tokens_output": 6761,
+        "minutes": 0.8,
+        "subagents": 0,
+        "cost_usd_list": 0.3147
+      },
+      "tutor": {
+        "scenarios": 6,
+        "tokens_total": 724354,
+        "tokens_output": 10808,
+        "minutes": 1.55,
+        "subagents": 0,
+        "cost_usd_list": 0.68
+      },
+      "total": {
+        "scenarios": 10,
+        "tokens_total": 1644272,
+        "tokens_output": 44849,
+        "minutes": 5.23,
+        "subagents": 0,
+        "cost_usd_list": 1.6827
+      }
+    }
+  },
+  "scoring_cost": {
+    "tokens": 81964,
+    "cost_usd_list": 0.1915,
+    "calls": 9
+  },
+  "warnings": []
+}

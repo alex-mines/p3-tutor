@@ -1,0 +1,36 @@
+{
+  "id": "0002",
+  "items": [
+    {
+      "id": "q1",
+      "answer": "a",
+      "rationale": "The model sees only the text in its current context; it keeps nothing between sessions, so unsaved information is gone. Picking b or c shows the belief that the model remembers users by itself."
+    },
+    {
+      "id": "q2",
+      "answer": 4500,
+      "tolerance": 0,
+      "rationale": "Call 1 reads 1,000; call 2 reads 1,500; call 3 reads 2,000. The sum is 4,500. An answer of 2,000 counts only the final context and misses that earlier text is reread on every call."
+    },
+    {
+      "id": "q3",
+      "answer": "a",
+      "rationale": "Retrieval puts only the best few chunks into context, so the cost per call stays small. Pasting or loading the whole manual is read on every call, and recalling from training does not know your manual."
+    },
+    {
+      "id": "q4",
+      "answer": "The context window is what the model sees on one call and is gone afterwards; saved notes live outside it and are loaded back in later.",
+      "accepted": [
+        "context is temporary, notes persist",
+        "the context window is only for the current request; notes are stored and kept between sessions",
+        "context is what the model reads now; notes are saved outside it for later"
+      ],
+      "rationale": "The key idea is that the context is the model's only view and is per call or per request, while notes are saved by the program outside the model and put back in the context in later sessions."
+    },
+    {
+      "id": "q5",
+      "answer": "a",
+      "rationale": "Keyword search matches exact words, so different wording misses the chunk; embedding search matches meaning, so using both covers each other's gaps. Option b removes the thing that would fix it."
+    }
+  ]
+}

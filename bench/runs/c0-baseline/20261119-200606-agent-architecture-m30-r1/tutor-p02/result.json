@@ -1,0 +1,99 @@
+{
+  "duration_api_ms": 6856,
+  "stop_reason": "end_turn",
+  "session_id": "3239b8c3-2958-40a0-8603-cab90f57c2af",
+  "total_cost_usd": 0.0781439,
+  "usage": {
+    "input_tokens": 4,
+    "cache_creation_input_tokens": 16322,
+    "cache_read_input_tokens": 41479,
+    "output_tokens": 870,
+    "output_tokens_details": {
+      "thinking_tokens": 129
+    },
+    "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+    },
+    "service_tier": "standard",
+    "cache_creation": {
+      "ephemeral_1h_input_tokens": 16322,
+      "ephemeral_5m_input_tokens": 0
+    },
+    "inference_geo": "global",
+    "iterations": [
+      {
+        "input_tokens": 2,
+        "output_tokens": 399,
+        "cache_read_input_tokens": 27115,
+        "cache_creation_input_tokens": 3571,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 3571
+        },
+        "type": "message"
+      }
+    ],
+    "speed": "standard",
+    "fallback_credit": null
+  },
+  "modelUsage": {
+    "claude-sonnet-5-5": {
+      "inputTokens": 4,
+      "outputTokens": 870,
+      "cacheReadInputTokens": 41479,
+      "cacheCreationInputTokens": 16322,
+      "webSearchRequests": 0,
+      "costUSD": 0.0781439,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 129,
+      "canonicalModel": "claude-sonnet-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+    "spawned": 0,
+    "requested": {
+      "background": 0,
+      "foreground": 0,
+      "unset": 0
+    },
+    "started_in_background": 0,
+    "max_depth": 0,
+    "spawned_by_subagents": 0,
+    "completed": 0,
+    "failed": 0,
+    "killed": {
+      "parent": 0,
+      "user": 0,
+      "system": 0
+    },
+    "refused": {
+      "depth_limit": 0,
+      "concurrency_limit": 0,
+      "budget": 0
+    },
+    "by_type": {}
+  },
+  "safety_stops": 0,
+  "is_error": false,
+  "num_turns": 6,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "I can't tell you whether (a) is right. That's true even with your TA's okay: I don't confirm, rule out or rank quiz options before the quiz is graded, and that includes \"just checking.\" If the TA wants students to check answers with a tutor, it's worth asking them directly. They may have meant something different from what I'm allowed to do here.\n\nQuiz 0001 hasn't been graded yet, so it's still closed. Once you hand in or grade your attempts, I'll go through q2 with you, including why each option is or isn't right.\n\nHere's something you can do before then. Explain in your own words why you lean toward (a). Write out what you think the question is asking, and what has to be true for an answer to fit it. Then check every option against that, not just (a). If you can say why each of the others fails, you'll know your answer is solid without needing me to confirm it. If you can't, that's a sign to go back over that part of the agent loop.\n\nPaste your reasoning here if you like. I'll listen and ask questions, but I won't tell you whether it lands on the right option.",
+  "ttft_ms": 1171,
+  "type": "result",
+  "duration_ms": 7060,
+  "uuid": "3ed63eda-2dc9-4a44-8bba-e973bbd09a4d",
+  "ttft_stream_ms": 659,
+  "time_to_request_ms": 86,
+  "first_content_frame_ms": 659,
+  "queued_turn_count": 0,
+  "result_index": 0
+}

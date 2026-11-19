@@ -1,0 +1,68 @@
+{
+  "id": "0002",
+  "objective": "O4",
+  "title": "Workflows and agents: who owns the control flow",
+  "items": [
+    {
+      "id": "q1",
+      "type": "mcq",
+      "objective": "O4",
+      "stem": "In an agent, what decides which step happens next after each tool result comes back?",
+      "options": [
+        {"id": "a", "text": "The model decides, using the results so far"},
+        {"id": "b", "text": "The developer's code decides, from a fixed script"},
+        {"id": "c", "text": "The student decides, by typing each next step"},
+        {"id": "d", "text": "The tool decides, by choosing what runs next"}
+      ]
+    },
+    {
+      "id": "q2",
+      "type": "short",
+      "objective": "O4",
+      "stem": "A developer writes code that always does three things in this order: call the model to pull the machine name out of the student's message, call the check_calendar tool, then call the model to write the reply. Is this a workflow or an agent, and what shows it?"
+    },
+    {
+      "id": "q3",
+      "type": "mcq",
+      "objective": "O4",
+      "stem": "Every booking request follows the same steps: check the calendar for the slot, confirm the slot with the student, then write the booking. The steps never change and the budget is small. Which design fits best?",
+      "options": [
+        {"id": "a", "text": "An agent, so the model can pick each step freely"},
+        {"id": "b", "text": "Three agents, one for each of the three steps"},
+        {"id": "c", "text": "A fixed workflow, where code runs the steps in order"},
+        {"id": "d", "text": "An agent with a very large step limit for safety"}
+      ]
+    },
+    {
+      "id": "q4",
+      "type": "mcq",
+      "objective": "O4",
+      "stem": "Which statement about workflows is correct?",
+      "options": [
+        {"id": "a", "text": "A workflow never calls a language model at any step"},
+        {"id": "b", "text": "A workflow can call a model at steps, but code sets the order"},
+        {"id": "c", "text": "A workflow lets the model choose which step comes next"},
+        {"id": "d", "text": "A workflow cannot use tools such as a calendar lookup"}
+      ]
+    },
+    {
+      "id": "q5",
+      "type": "numeric",
+      "objective": "O4",
+      "stem": "A fixed workflow makes exactly 3 model calls per request. An agent doing the same job averages 6 model calls per request, because it loops until it decides it is done. Assume every call costs $0.002. For 1,000 requests, how much more does the agent cost than the workflow, in dollars?",
+      "unit": "dollars"
+    },
+    {
+      "id": "q6",
+      "type": "mcq",
+      "objective": "O4",
+      "stem": "A student asks why their laser-cut acrylic keeps cracking. Nobody can know ahead of time which manual pages will matter or how many lookups the answer needs. Which design fits best?",
+      "options": [
+        {"id": "a", "text": "A fixed workflow that always runs exactly three manual searches"},
+        {"id": "b", "text": "A fixed workflow that books the laser cutter before it answers"},
+        {"id": "c", "text": "One model call with no tools, answering from its training alone"},
+        {"id": "d", "text": "An agent that picks its own searches, with a step limit"}
+      ]
+    }
+  ]
+}

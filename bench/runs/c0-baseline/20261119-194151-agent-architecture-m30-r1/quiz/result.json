@@ -1,0 +1,99 @@
+{
+  "duration_api_ms": 40603,
+  "stop_reason": "end_turn",
+  "session_id": "e3abb10c-04c8-469a-82a7-edd1a63ccd4d",
+  "total_cost_usd": 0.18281799999999998,
+  "usage": {
+    "input_tokens": 10,
+    "cache_creation_input_tokens": 28249,
+    "cache_read_input_tokens": 158320,
+    "output_tokens": 5397,
+    "output_tokens_details": {
+      "thinking_tokens": 1924
+    },
+    "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+    },
+    "service_tier": "standard",
+    "cache_creation": {
+      "ephemeral_1h_input_tokens": 28249,
+      "ephemeral_5m_input_tokens": 0
+    },
+    "inference_geo": "global",
+    "iterations": [
+      {
+        "input_tokens": 2,
+        "output_tokens": 422,
+        "cache_read_input_tokens": 42256,
+        "cache_creation_input_tokens": 357,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 357
+        },
+        "type": "message"
+      }
+    ],
+    "speed": "standard",
+    "fallback_credit": null
+  },
+  "modelUsage": {
+    "claude-sonnet-5-5": {
+      "inputTokens": 10,
+      "outputTokens": 5397,
+      "cacheReadInputTokens": 158320,
+      "cacheCreationInputTokens": 28249,
+      "webSearchRequests": 0,
+      "costUSD": 0.18281799999999998,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 1924,
+      "canonicalModel": "claude-sonnet-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+    "spawned": 0,
+    "requested": {
+      "background": 0,
+      "foreground": 0,
+      "unset": 0
+    },
+    "started_in_background": 0,
+    "max_depth": 0,
+    "spawned_by_subagents": 0,
+    "completed": 0,
+    "failed": 0,
+    "killed": {
+      "parent": 0,
+      "user": 0,
+      "system": 0
+    },
+    "refused": {
+      "depth_limit": 0,
+      "concurrency_limit": 0,
+      "budget": 0
+    },
+    "by_type": {}
+  },
+  "safety_stops": 0,
+  "is_error": false,
+  "num_turns": 11,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "The six-question quiz on O4 is ready: `quizzes/0002.json`, with its key in `keys/0002.json`. I didn't run a separate solver pass on the items. I only answered each one myself from its stem.\n\n- **Coverage:** It has four multiple-choice items, one short answer and one numeric item. They cover who owns the control flow, labelling a design as workflow or agent, picking a fixed workflow for the booking steps, picking an agent for an open-ended troubleshooting question, and a cost comparison for your budget.\n- **Ahead of the lessons:** No lesson covers O4 yet, so this checks the objective directly rather than a lesson. I wrote it from my own knowledge of the workflow-versus-agent distinction and did not search for or cite a source. If you want a lesson on O4 first, ask and I'll write one.\n- **New misconception ids:** The key introduces three. M7 is \"more autonomy is always better\". M8 is \"using a model or tools makes it an agent\". M4, \"the model runs the tools itself\", is reused from quiz 0001 on `q1`.\n- **Ungraded earlier quiz:** Quiz 0001 has two submissions that are still ungraded.\n\nWant to take this one in the chat, or grade the quiz 0001 submissions first?",
+  "ttft_ms": 936,
+  "type": "result",
+  "duration_ms": 40892,
+  "uuid": "7721435a-bab1-4522-8550-40ed4c709765",
+  "ttft_stream_ms": 547,
+  "time_to_request_ms": 85,
+  "first_content_frame_ms": 547,
+  "queued_turn_count": 0,
+  "result_index": 0
+}

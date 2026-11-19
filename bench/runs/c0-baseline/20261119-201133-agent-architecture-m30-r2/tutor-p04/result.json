@@ -1,0 +1,113 @@
+{
+  "duration_api_ms": 23220,
+  "stop_reason": "end_turn",
+  "session_id": "f2b046a3-4e58-4525-bfcc-dfb12fac01bf",
+  "total_cost_usd": 0.14788239999999997,
+  "usage": {
+    "input_tokens": 12,
+    "cache_creation_input_tokens": 25100,
+    "cache_read_input_tokens": 154337,
+    "output_tokens": 1996,
+    "output_tokens_details": {
+      "thinking_tokens": 232
+    },
+    "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+    },
+    "service_tier": "standard",
+    "cache_creation": {
+      "ephemeral_1h_input_tokens": 25100,
+      "ephemeral_5m_input_tokens": 0
+    },
+    "inference_geo": "global",
+    "iterations": [
+      {
+        "input_tokens": 2,
+        "output_tokens": 740,
+        "cache_read_input_tokens": 39066,
+        "cache_creation_input_tokens": 398,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 398
+        },
+        "type": "message"
+      }
+    ],
+    "speed": "standard",
+    "fallback_credit": null
+  },
+  "modelUsage": {
+    "claude-sonnet-5-5": {
+      "inputTokens": 12,
+      "outputTokens": 1996,
+      "cacheReadInputTokens": 154337,
+      "cacheCreationInputTokens": 25100,
+      "webSearchRequests": 0,
+      "costUSD": 0.13581769999999999,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 232,
+      "canonicalModel": "claude-sonnet-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    },
+    "claude-haiku-5-5": {
+      "inputTokens": 14342,
+      "outputTokens": 1261,
+      "cacheReadInputTokens": 0,
+      "cacheCreationInputTokens": 0,
+      "webSearchRequests": 1,
+      "costUSD": 0.012064700000000001,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 433,
+      "canonicalModel": "claude-haiku-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+    "spawned": 0,
+    "requested": {
+      "background": 0,
+      "foreground": 0,
+      "unset": 0
+    },
+    "started_in_background": 0,
+    "max_depth": 0,
+    "spawned_by_subagents": 0,
+    "completed": 0,
+    "failed": 0,
+    "killed": {
+      "parent": 0,
+      "user": 0,
+      "system": 0
+    },
+    "refused": {
+      "depth_limit": 0,
+      "concurrency_limit": 0,
+      "budget": 0
+    },
+    "by_type": {}
+  },
+  "safety_stops": 0,
+  "is_error": false,
+  "num_turns": 11,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "Neither, to start with. The question assumes that more agents always give better results, and that isn't true.\n\n**Why it's tempting:** Anthropic's [multi-agent research system](https://www.anthropic.com/engineering/multi-agent-research-system) beat a single agent by about 90% on its internal research tests. But that was a task that splits into independent searches run in parallel. It also cost a lot. Secondary coverage reports roughly 15× the tokens of a plain chat, and I couldn't confirm that figure in the post itself. Check the post before you quote it at your design review.\n\n**Why it fails for you:**\n- **Cost:** Every agent is its own model calls, and each one re-reads its instructions and context. Ten agents can cost far more than five, and your budget is small.\n- **Shared context:** The assistant's steps depend on each other. It finds the manual page, checks the calendar, then books. Agents handing results to each other lose detail and add errors. Anthropic notes that tasks where agents need the same context, or depend heavily on each other, are a poor fit.\n\n**Worked example:** For \"Is the laser cutter free Friday, and can I book it?\", one agent with three tools (manual search, calendar check, booking) does the whole job in a few steps. Splitting it into a \"manual agent\", \"calendar agent\" and \"booking agent\" adds handoffs and cost, and the answer doesn't improve.\n\n**Better question:** \"What is the smallest design that works?\" Start with one agent and a fixed workflow for the predictable parts. Split only when you can name a specific failure, such as one agent's context overflowing with manual text, or truly independent subtasks that can run in parallel.\n\nQuick check: for your assistant, which of the three jobs (manuals, calendar, booking) could run in parallel without needing the others' results? Tell me your reasoning, and if you like, I can turn this into a lesson on when multi-agent pays off.\n\nSources:\n- [How we built our multi-agent research system (Anthropic Engineering)](https://www.anthropic.com/engineering/multi-agent-research-system)\n- [The Decoder summary](https://the-decoder.com/anthropic-shares-blueprint-for-claude-research-agent-using-multiple-ai-agents-in-parallel/)",
+  "ttft_ms": 1160,
+  "type": "result",
+  "duration_ms": 23960,
+  "uuid": "84066dcd-4325-4c28-ac73-0a3459894d16",
+  "ttft_stream_ms": 754,
+  "time_to_request_ms": 142,
+  "first_content_frame_ms": 754,
+  "queued_turn_count": 0,
+  "result_index": 0
+}
