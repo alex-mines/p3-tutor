@@ -1,0 +1,68 @@
+{
+  "id": "0002",
+  "objective": "O4",
+  "title": "Workflows, agents and who owns the control flow",
+  "items": [
+    {
+      "id": "q1",
+      "type": "mcq",
+      "objective": "O4",
+      "stem": "In the common distinction between workflows and agents, which question tells you which one a system is?",
+      "options": [
+        {"id": "a", "text": "Whether the system calls the language model more than once per request"},
+        {"id": "b", "text": "Whether code or the model decides the next step and which tool runs"},
+        {"id": "c", "text": "Whether the system gives the language model any tools it can request"},
+        {"id": "d", "text": "Whether the system uses a large model or a small, cheaper model"}
+      ]
+    },
+    {
+      "id": "q2",
+      "type": "mcq",
+      "objective": "O4",
+      "stem": "Your makerspace assistant handles a request like \"Book the 3D printer for Friday at 2 pm\" with this Python code: it calls the model once to extract the machine, date and time as JSON; the code then calls check_calendar; if the slot is free, the code calls book_slot; finally the model is called once to write the confirmation. The model never chooses which step comes next. How should this system be classified?",
+      "options": [
+        {"id": "a", "text": "An agent, because it uses a language model and calls booking tools"},
+        {"id": "b", "text": "An agent, because the model is called more than once per request"},
+        {"id": "c", "text": "A workflow, because the code fixes the order of steps in advance"},
+        {"id": "d", "text": "A workflow, because it has fewer than five tools available to use"}
+      ]
+    },
+    {
+      "id": "q3",
+      "type": "short",
+      "objective": "O4",
+      "stem": "In one sentence, state what a workflow and an agent each leave to the model, to show who owns the control flow in each."
+    },
+    {
+      "id": "q4",
+      "type": "numeric",
+      "objective": "O4",
+      "stem": "Your sponsor's budget covers 30,000 model calls for the term, and you assume every call costs the same. A fixed booking workflow uses exactly 3 model calls per request. An agent that handles the same booking requests averages 5 model calls per request, because it decides its own steps. How many more booking requests can the fixed workflow serve than the agent within that budget?",
+      "unit": "requests"
+    },
+    {
+      "id": "q5",
+      "type": "mcq",
+      "objective": "O4",
+      "stem": "You must choose which part of the makerspace assistant to build as an agent, with the rest as fixed workflows. Which part gains the most from the model choosing its own steps?",
+      "options": [
+        {"id": "a", "text": "Checking the student's training record before a booking is confirmed"},
+        {"id": "b", "text": "Sending the same confirmation message after every successful booking"},
+        {"id": "c", "text": "Sorting each incoming message as a booking, manual or other request"},
+        {"id": "d", "text": "Diagnosing a failed print when the needed manual pages are unknown"}
+      ]
+    },
+    {
+      "id": "q6",
+      "type": "mcq",
+      "objective": "O4",
+      "stem": "A teammate proposes this design for every manual question: the code always runs search_manuals with the student's question, pastes the top three pages into a prompt, and calls the model once to write the answer. The model cannot request any other action. What is this design?",
+      "options": [
+        {"id": "a", "text": "A workflow, because the code, not the model, sets the steps"},
+        {"id": "b", "text": "An agent, because the model reads a tool's result to answer"},
+        {"id": "c", "text": "An agent, because searching the manuals is a form of tool use"},
+        {"id": "d", "text": "Neither, because a workflow cannot include a retrieval step at all"}
+      ]
+    }
+  ]
+}

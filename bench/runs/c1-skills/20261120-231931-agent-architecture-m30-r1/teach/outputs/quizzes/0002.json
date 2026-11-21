@@ -1,0 +1,62 @@
+{
+  "id": "0002",
+  "objective": "O3",
+  "title": "Context and memory in an agent",
+  "items": [
+    {
+      "id": "q1",
+      "type": "numeric",
+      "objective": "O3",
+      "stem": "An agent run makes four model calls. The first call reads 1,000 tokens of context, and each tool step before the next call adds 500 tokens, which the program re-sends on every later call. How many input tokens are billed in total across the four calls?",
+      "unit": "tokens"
+    },
+    {
+      "id": "q2",
+      "type": "mcq",
+      "objective": "O3",
+      "stem": "On Monday a student chats with your assistant and mentions that they are building a kayak rack. On Tuesday they open a new session. The assistant has no saved notes. What does the model have available at the start of Tuesday's run?",
+      "options": [
+        {"id": "a", "text": "A short summary of Monday that the model keeps in its own weights"},
+        {"id": "b", "text": "Monday's full transcript, because the context window carries over days"},
+        {"id": "c", "text": "Only the instructions, tool descriptions and the student's new message"},
+        {"id": "d", "text": "Monday's key facts, since the model learns from each conversation"}
+      ]
+    },
+    {
+      "id": "q3",
+      "type": "mcq",
+      "objective": "O3",
+      "stem": "The program has saved the note \"Priya: laser training passed 2 March\" in a file. Priya starts a new session and asks to book the laser cutter. How does the model come to use that note?",
+      "options": [
+        {"id": "a", "text": "The model opens the file on its own and reads the note directly"},
+        {"id": "b", "text": "The program reads the file and places its text in the context"},
+        {"id": "c", "text": "The model recognizes Priya from earlier chats and recalls the note"},
+        {"id": "d", "text": "The note was stored inside the model after the earlier session"}
+      ]
+    },
+    {
+      "id": "q4",
+      "type": "mcq",
+      "objective": "O3",
+      "stem": "At step 2, a tool returned a 30,000-token page dump. The agent has finished using it, but the run has ten more steps. Which change keeps the remaining calls cheapest without losing what the agent needs?",
+      "options": [
+        {"id": "a", "text": "Switch to a model with a larger context window for the later steps"},
+        {"id": "b", "text": "Add the page dump to the system prompt so that it is cached"},
+        {"id": "c", "text": "Tell the model in the prompt to answer briefly from here onward"},
+        {"id": "d", "text": "Replace the dump with a two-line note of what it contained"}
+      ]
+    },
+    {
+      "id": "q5",
+      "type": "mcq",
+      "objective": "O3",
+      "stem": "A student asks for \"laser power for 3 mm acrylic\". Keyword search over the manual misses the chunk titled \"Cutting parameters\" that holds the answer. Which change addresses this failure most directly?",
+      "options": [
+        {"id": "a", "text": "Add search by meaning (embeddings) alongside the keyword search"},
+        {"id": "b", "text": "Raise the context window limit so more chunks can be included"},
+        {"id": "c", "text": "Shorten the system prompt so the search has more room to work"},
+        {"id": "d", "text": "Have the model guess a page number and fetch that page directly"}
+      ]
+    }
+  ]
+}

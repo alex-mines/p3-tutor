@@ -1,6 +1,6 @@
 ---
 name: teach
-description: Teach, tutor, quiz and grade the learner in this workspace - a lesson of the requested length as a beautiful HTML page with a short quiz and key, answers to the learner's questions in the chat, quizzes with answer keys, and grades with feedback on submissions; use it for every request from the learner here.
+description: Teach the learner in this workspace - a lesson of the requested length as a beautiful HTML page with a short quiz and key; use it for lesson requests, the quiz skill for standalone quizzes, the grade skill for grading, and the tutor skill for questions in the chat.
 argument-hint: "What would you like to learn, or what should I do?"
 ---
 
@@ -20,15 +20,12 @@ Pick the job from it:
 | The request | The job |
 |---|---|
 | asks for a lesson (often with a length in minutes) | teach |
-| asks for a quiz, or to be tested | quiz |
-| asks you to grade or mark a submission | grade |
-| asks whether an answer to a quiz item is right, or for a quiz answer | tutor |
-| anything else: a question, a request to explain or re-explain something, a doubt, a check of their understanding, a request for help or a comment, however big the topic | tutor |
+| asks for a quiz, or to be tested | quiz (the `quiz` skill, `/quiz`, not this one) |
+| asks you to grade or mark a submission | grade (the `grade` skill, `/grade`, not this one) |
+| anything else: a question, a quiz answer, a request to explain or re-explain, a doubt, a request for help or a comment | tutor (the `tutor` skill, `/tutor`, not this one) |
 
-When unsure between teach and tutor, it is tutor: answer in the chat, and offer a lesson at the end.
-
-When the learner submits a complete set of answers to a quiz you gave them in the chat, or asks you to grade their answers, that is a grade request: record the answers as a submission, as `FORMATS.md` shows, and grade it.
-A learner who offers one answer to check, confirm or rule out before handing a quiz in is making a tutor request: do not write a submission or grade it.
+For a tutor request, use the `tutor` skill, for a quiz request the `quiz` skill, and for a grade request the `grade` skill, and follow it instead of the rest of this one.
+A learner who offers one answer to check, confirm or rule out before handing a quiz in is making a tutor request, so it is the `tutor` skill's: do not write a submission or grade it.
 
 A request that says what to do gets done now, without stopping to ask first.
 Put any question you have for the learner at the end of your final message, since there may be no one to answer it before the session ends.
@@ -115,41 +112,10 @@ Read `references/LESSONS.md` and `references/lesson-template.html`, then the tit
    Add the sources to `RESOURCES.md` in the format in `references/RESOURCES-FORMAT.md`.
 3. **Plan to the minutes:** split the lesson into sections with a word budget for each, as `references/LESSONS.md` explains, so the whole lesson fits the requested length.
 4. **Write the lesson** to `lessons/NNNN-<slug>.html`, following `FORMATS.md` and the template: beautiful and self-contained, with figures, worked examples, practice with immediate feedback, and citations.
-5. **Write a short quiz and its key** on the lesson's objective, in the same pass: four or five items, as `references/QUIZZES.md` describes, none of them a repeat of the lesson's practice questions.
+5. **Write a short quiz and its key** on the lesson's objective, in the same pass: four or five items, as `.claude/skills/quiz/references/QUIZZES.md` describes, none of them a repeat of the lesson's practice questions.
 6. **Keep the workspace current:** a cheat sheet in `cheatsheets/` when the lesson holds something worth looking up later, and `NOTES.md` for anything you learned about the learner.
 7. **Finish** with a short message: the lesson's path and what it covers, that a quiz is ready when they are, and a reminder that they can ask you anything about it.
    Never put a quiz answer in the message.
-
-## Quiz
-
-Read `references/QUIZZES.md`, the lessons on the objective, and the earlier quizzes, keys and grades.
-
-1. Pin down the objective, its id and the number of items asked for.
-2. Find the objective's core in its lessons or, when there are none, in a high-trust source you search for and read.
-3. Write the quiz to `quizzes/NNNN.json` and its key to `keys/NNNN.json`, exactly as `FORMATS.md` shows.
-4. Answer every item yourself from its stem alone, then rewrite any item that lacks a single defensible answer.
-5. Finish with a short message that the quiz is ready, without the answers.
-
-When the learner wants to take a quiz in the chat, show its title, stems and options, never anything from `keys/`, and collect their answers.
-
-## Grade
-
-Read `references/GRADING.md`, the quiz, its key, the submission, and the lesson the quiz is on if there is one.
-
-1. Grade every item: a verdict, the misconception if the response shows one, and feedback written for this learner.
-2. Write `grades/NNNN-sN.json` exactly as `FORMATS.md` shows.
-3. Write a learning record for what the grades show, an understanding or a misconception to work on, in the format in `references/LEARNING-RECORD-FORMAT.md`, and update `NOTES.md`.
-4. Finish with the summary and the one next step.
-
-## Tutor
-
-Read `references/TUTORING.md`, then whatever the message is about: a lesson, a quiz item, a grade.
-
-1. Answer the message at the learner's level, the way `PREFERENCES.md` asks, tied to the mission.
-2. Never hand out a quiz answer, whether it is in `keys/` or you worked it out; coach the learner's own reasoning instead, as `references/TUTORING.md` describes.
-3. Correct a misconception or a false premise plainly and kindly before anything else.
-4. Note new preferences and what you learned about the learner in `NOTES.md`, and write a learning record when the learner showed real understanding or told you what they already know.
-5. Your reply is your final message: write any files before it, never after it.
 
 ## Records
 
@@ -163,9 +129,7 @@ Write one when the learner shows real understanding of something non-trivial, te
 |---|---|
 | `references/LESSONS.md` | teaching: length, shape, design, figures, practice, sources |
 | `references/lesson-template.html` | teaching: the starting point for every lesson |
-| `references/QUIZZES.md` | writing a quiz and its key, in the quiz job or after a lesson |
-| `references/GRADING.md` | grading a submission |
-| `references/TUTORING.md` | answering the learner in the chat |
+| `.claude/skills/quiz/references/QUIZZES.md` | writing the short quiz and key that follow a lesson |
 | `references/MISSION-FORMAT.md` | writing or revising `MISSION.md` |
 | `references/LEARNING-RECORD-FORMAT.md` | writing a learning record |
 | `references/RESOURCES-FORMAT.md` | adding to `RESOURCES.md` |

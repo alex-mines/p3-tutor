@@ -1,0 +1,43 @@
+{
+  "quiz": "0001",
+  "submission": "s1",
+  "items": [
+    {
+      "id": "q1",
+      "verdict": "correct",
+      "misconception": null,
+      "feedback": "Rating: 10/10. The loop of choosing actions, running them and returning results is the defining structure of an agent. Prompt length, window size and memory change what a call can do, not this structure."
+    },
+    {
+      "id": "q2",
+      "verdict": "wrong",
+      "misconception": "M4",
+      "feedback": "Rating: 2/10. Option a assumes the model reaches into the booking system itself. Hint: the model only produces text. Ask what kind of text it would have to produce so that the surrounding program knows which tool to run and with which arguments, and who then does the running."
+    },
+    {
+      "id": "q3",
+      "verdict": "correct",
+      "misconception": null,
+      "feedback": "Rating: 10/10. All 40 steps already fit in the context, so more room or more steps cannot help. A stopping condition such as a step limit is a property of the program around the model, which is a design decision you can defend at your review."
+    },
+    {
+      "id": "q4",
+      "verdict": "wrong",
+      "misconception": "M4",
+      "feedback": "Rating: 2/10. The answer 1 repeats the belief from q2 that the model runs the tools itself. Hint: the stem says each call ends in exactly one tool request or the final answer. Count how many separate times the model receives input, starting with the question, and ask who runs each tool between calls."
+    },
+    {
+      "id": "q5",
+      "verdict": "partial",
+      "misconception": null,
+      "feedback": "Rating: 5/10. You have the what: the result goes back to the model. The answer is missing the why. Hint: after the result is sent back, what does the model do next with it, and what would happen to the loop if the result never reached it?"
+    },
+    {
+      "id": "q6",
+      "verdict": "partial",
+      "misconception": "M3",
+      "feedback": "Rating: 6/10. The first part is right: the model is sent each tool's name and description and picks the one that fits. The added claim is wrong: the model does not remember earlier sessions' tool choices on its own. Hint: each call starts from only the text the program sends it, so ask what would have to be put into that text for any memory to exist."
+    }
+  ],
+  "summary": "Rating: 6/10 overall (2 correct, 2 partial, 2 wrong). You have the loop's structure and the need for a stopping condition down. The idea to work on is who does what: the model only outputs text, including a request naming a tool and its arguments, and the program runs the tool and feeds the result back. It also keeps no memory between sessions unless the program supplies it. Before retaking it, re-trace the laser cutter request and mark each step as 'model output' or 'program action', then redo q2 and q4."
+}

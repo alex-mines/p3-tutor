@@ -1,0 +1,41 @@
+{
+  "id": "0002",
+  "items": [
+    {
+      "id": "q1",
+      "answer": "b",
+      "rationale": "Workflows are systems where model calls and tools are orchestrated through predefined code paths; agents are systems where the model directs its own process and tool usage. The difference is who owns the control flow. The number of model calls (a), having tools (c) and model size (d) do not separate the two."
+    },
+    {
+      "id": "q2",
+      "answer": "c",
+      "rationale": "The code fixes the order of steps in advance (extract, check, book, confirm), so the control flow belongs to the code: a workflow. Using a model and tools (a) or calling the model several times (b) occurs in both kinds of system, and tool count (d) is irrelevant."
+    },
+    {
+      "id": "q3",
+      "answer": "In a workflow the code decides the steps and the model only fills in each step; in an agent the model decides the next step and which tool to use.",
+      "accepted": [
+        "A workflow follows predefined code paths while an agent's model directs its own steps and tool use.",
+        "In a workflow the developer's code controls the flow; in an agent the model controls the flow.",
+        "Workflow: code chooses the next step. Agent: the model chooses the next step."
+      ],
+      "rationale": "Full credit needs both sides: code owns the flow in a workflow, the model owns it in an agent. Describing only one side is partial. Defining the difference by the number of calls, the presence of tools or model size is wrong."
+    },
+    {
+      "id": "q4",
+      "answer": 4000,
+      "tolerance": 0,
+      "rationale": "The workflow serves 30,000 / 3 = 10,000 requests; the agent serves 30,000 / 5 = 6,000. The difference is 4,000. Agents trade cost and latency for flexibility, so on a well-defined task such as booking the fixed workflow is cheaper. An answer of 6,000 or 10,000 gives one system's capacity rather than the difference."
+    },
+    {
+      "id": "q5",
+      "answer": "d",
+      "rationale": "Agents pay off when the steps cannot be predicted in advance and flexibility is needed; diagnosing a failure with unknown manual pages is open-ended, so the model must choose what to search and when to stop. Checking the training record (a), sending a fixed confirmation (b) and sorting messages (c) have predictable steps, so a fixed workflow gives the same result more cheaply and predictably."
+    },
+    {
+      "id": "q6",
+      "answer": "a",
+      "rationale": "The code fixes every step (search, build the prompt, one model call), and the model cannot choose actions, so this is a workflow that includes retrieval. Using a tool or reading its result (b, c) does not make a system an agent; the model must decide the next action. Workflows can include retrieval (d)."
+    }
+  ]
+}

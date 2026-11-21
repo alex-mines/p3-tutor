@@ -1,0 +1,24 @@
+{
+  "name": "c1-skills",
+  "hash": "sha256:1ddc4e5f2fa5c57de5993a5658a8c40f55ddd443defca9ea70b30f91be23f723",
+  "created_at": "2026-11-20T23:18:25Z",
+  "files": [
+    ".claude/agents/README.md",
+    ".claude/settings.json",
+    ".claude/skills/grade/SKILL.md",
+    ".claude/skills/grade/references/GRADING.md",
+    ".claude/skills/quiz/SKILL.md",
+    ".claude/skills/quiz/references/QUIZZES.md",
+    ".claude/skills/teach/SKILL.md",
+    ".claude/skills/teach/references/GLOSSARY-FORMAT.md",
+    ".claude/skills/teach/references/LEARNING-RECORD-FORMAT.md",
+    ".claude/skills/teach/references/LESSONS.md",
+    ".claude/skills/teach/references/MISSION-FORMAT.md",
+    ".claude/skills/teach/references/RESOURCES-FORMAT.md",
+    ".claude/skills/teach/references/lesson-template.html",
+    ".claude/skills/tutor/SKILL.md",
+    ".claude/skills/tutor/references/TUTORING.md",
+    "CLAUDE.md",
+    "PREFERENCES.md"
+  ]
+}

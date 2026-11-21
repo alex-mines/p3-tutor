@@ -1,0 +1,31 @@
+{
+  "id": "0002",
+  "items": [
+    {
+      "id": "q1",
+      "answer": 7000,
+      "tolerance": 0,
+      "rationale": "The calls read 1,000 + 1,500 + 2,000 + 2,500 = 7,000 tokens, because each call re-reads everything before it. An answer of 2,500 counts only the last call, and 2,500 is not the total billed."
+    },
+    {
+      "id": "q2",
+      "answer": "c",
+      "rationale": "A new run is built from the system prompt, tool descriptions and the new message; nothing from Monday persists unless the program saved it. Models do not learn from conversations, and the window is rebuilt for each run."
+    },
+    {
+      "id": "q3",
+      "answer": "b",
+      "rationale": "The model reads only its context. The program loads the saved note and inserts its text there; the model cannot open files or recall past users on its own."
+    },
+    {
+      "id": "q4",
+      "answer": "d",
+      "rationale": "Every later call re-sends the dump, so replacing it with a short note of what mattered cuts the cost of all ten calls while keeping the needed information (clearing old tool results). A larger window or a brevity instruction does not remove the tokens being re-sent."
+    },
+    {
+      "id": "q5",
+      "answer": "a",
+      "rationale": "Keyword search misses differently worded text; searching by meaning finds passages with the same meaning whatever the wording. Context size, prompt length and guessing page numbers do not fix a retrieval failure."
+    }
+  ]
+}

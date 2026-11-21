@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Cheat sheet: context and memory in an agent</title>
+  <style>
+    body { max-width: 40rem; margin: 0 auto; padding: 2rem 1.25rem; font-family: Georgia, serif; line-height: 1.5; background: #fffdf8; color: #1f1d1a; }
+    h1 { font-size: 1.6rem; } h2 { font-size: 1.1rem; margin-top: 1.5rem; }
+    table { width: 100%; border-collapse: collapse; font-size: 0.9rem; }
+    th, td { text-align: left; vertical-align: top; padding: 0.4rem; border-bottom: 1px solid #e4dfd4; }
+    @media (prefers-color-scheme: dark) { body { background: #171614; color: #e9e5dc; } th, td { border-color: #36332e; } }
+  </style>
+</head>
+<body>
+  <h1>Context and memory in an agent</h1>
+  <p>From <a href="../lessons/0001-context-and-memory.html">Lesson 1</a>.</p>
+  <h2>Where information lives</h2>
+  <table>
+    <tr><th>Place</th><th>Lifetime</th><th>Use for</th></tr>
+    <tr><td>Context window</td><td>One call, rebuilt each time</td><td>Instructions, tool descriptions, transcript</td></tr>
+    <tr><td>Saved notes</td><td>Across sessions</td><td>Durable student facts (training status)</td></tr>
+    <tr><td>Searchable store</td><td>Permanent</td><td>Long fixed text (manuals), via top-k chunks</td></tr>
+    <tr><td>Live tool call</td><td>Fresh each time</td><td>Facts that change (calendar)</td></tr>
+  </table>
+  <h2>Cost rules</h2>
+  <ul>
+    <li>Total input = sum of every call's context, not the last one.</li>
+    <li>Tool descriptions are re-sent on every call.</li>
+    <li>A large tool result is re-billed on every later call; clear or summarize it.</li>
+  </ul>
+  <h2>Retrieval steps</h2>
+  <ol><li>Chunk the manual.</li><li>Index (keywords and/or meaning).</li><li>Search with the question.</li><li>Put the top few chunks in context.</li></ol>
+</body>
+</html>
